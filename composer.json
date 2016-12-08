@@ -1,0 +1,27 @@
+{
+    "name": "objectiv/forest-starter-theme",
+    "description": "A starter theme for Objectiv websites",
+    "repositories":[
+        {
+            "type":"composer",
+            "url":"https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "timber/timber": "^1.1",
+        "wpackagist-plugin/captcha":">=3.9"
+    },
+    "extra": {
+        "installer-paths": {
+            "../../plugins/{$name}/": [
+                "wpackagist-plugin/*",
+                "type:wordpress-plugin"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-0": {
+            "Acme": "src/"
+        }
+    }
+}

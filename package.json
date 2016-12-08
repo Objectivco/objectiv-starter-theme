@@ -1,0 +1,13 @@
+{
+  "name": "forest",
+  "version": "1.0.0",
+  "description": "A starter theme for Objectiv websites",
+  "main": "index.js",
+  "author": "Wes Cole",
+  "license": "MIT",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.9.1"
+  }
+}

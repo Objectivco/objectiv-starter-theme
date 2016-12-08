@@ -1,0 +1,51 @@
+<?php
+
+// Include all Composer Modules
+require_once( __DIR__ . '/vendor/autoload.php' );
+
+// Initialize Timber
+$timber = new \Timber\Timber();
+
+// Set the Timber directories that Twig templates can be found in
+Timber::$dirname = array( 'templates', 'views' );
+
+/**
+ * Set up the site object
+ *
+ * @since 1.0
+ */
+class ObjectivSite extends TimberSite {
+
+    function __construct() {
+        add_theme_support( 'post_thumbnails' );
+        add_theme_support( 'menus' );
+        add_filter( 'timber_context', array( $this, 'add_to_context' ) );
+        add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+        parent::__construct();
+    }
+
+    /**
+     * Add variables to site context
+     * @param object $context
+     *
+     * @since 1.0
+     */
+    function add_to_context( $context ) {
+        $context['site'] = $this;
+        $context['menu'] = new TimberMenu();
+        return $context;
+    }
+
+    /**
+     * Add custom functions to Twig
+     * @param object $twig
+     * @return object $twig
+     *
+     * @since 1.0
+     */
+    function add_to_twig( $twig ) {
+        return $twig;
+    }
+}
+
+new ObjectivSite();
