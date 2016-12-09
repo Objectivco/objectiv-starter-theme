@@ -1,29 +1,12 @@
 {% block html_head_container %}
-
-{% include 'head.twig' %}
-	{% block head %}
-	{% endblock %}
-	</head>
+	{% include 'head.twig' %}
 {% endblock %}
 
 	<body class="{{body_class}}" data-template="base.twig">
 		{{function('tha_body_top')}}
 
 		{{function('tha_header_before')}}
-		<header class="header" >
-			{{function('tha_header_top')}}
-			{% block header %}
-				<div class="wrap">
-					<h1 class="logo" role="banner">
-						<a class="logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>
-					<nav id="nav-main" class="nav-main" role="navigation">
-						{% include "menu.twig" with {'menu': menu.get_items} %}
-					</nav><!-- #nav -->
-				</div>
-			{% endblock %}
-			{{function('tha_header_bottom')}}
-		</header>
+			{% include 'header.twig' %}
 		{{function('tha_header_after')}}
 
 		<div class="site-inner">
@@ -37,11 +20,7 @@
 
 		{% block footer %}
 			{{function('tha_footer_before')}}
-			<footer id="footer">
-				{{function('tha_footer_top')}}
-				{% include 'footer.twig' %}
-				{{function('tha_footer_bottom')}}
-			</footer>
+			{% include 'footer.twig' %}
 			{{function('tha_footer_after')}}
 			{{function('tha_body_bottom')}}
 			{{function('wp_footer')}}
