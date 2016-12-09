@@ -5,7 +5,7 @@
             <h1 class="logo" role="banner">
                 <a class="logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
             </h1>
-            <nav id="nav-main" class="nav-main" role="navigation">
+            <nav {{function('obj_attr', 'nav', 'primary')}} role="navigation">
                 {% include "menu.twig" with {'menu': menu.get_items} %}
             </nav><!-- #nav -->
         </div>
