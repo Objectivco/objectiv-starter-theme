@@ -3,6 +3,9 @@
 // Include all Composer Modules
 require_once( __DIR__ . '/vendor/autoload.php' );
 
+// Include theme alliance hooks
+include( __DIR__ . '/include/tha-theme-hooks.php' );
+
 // Initialize Timber
 $timber = new \Timber\Timber();
 
