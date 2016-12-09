@@ -3,8 +3,8 @@
 // Include all Composer Modules
 require_once( __DIR__ . '/vendor/autoload.php' );
 
-// Include theme alliance hooks
-include( __DIR__ . '/include/tha-theme-hooks.php' );
+include( __DIR__ . '/includes/tha-theme-hooks.php' );
+include( __DIR__ . '/includes/attributes.php' );
 
 // Initialize Timber
 $timber = new \Timber\Timber();
@@ -22,8 +22,8 @@ class ObjectivSite extends TimberSite {
     function __construct() {
         add_theme_support( 'post_thumbnails' );
         add_theme_support( 'menus' );
-        add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-        add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+        add_filter( 'timber_context', array( $this, 'obj_add_to_context' ) );
+        add_filter( 'get_twig', array( $this, 'obj_add_to_twig' ) );
         parent::__construct();
     }
 
@@ -33,7 +33,7 @@ class ObjectivSite extends TimberSite {
      *
      * @since 1.0
      */
-    function add_to_context( $context ) {
+    function obj_add_to_context( $context ) {
         $context['site'] = $this;
         $context['menu'] = new TimberMenu();
         return $context;
@@ -46,7 +46,7 @@ class ObjectivSite extends TimberSite {
      *
      * @since 1.0
      */
-    function add_to_twig( $twig ) {
+    function obj_add_to_twig( $twig ) {
         return $twig;
     }
 }
