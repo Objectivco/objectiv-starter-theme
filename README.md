@@ -1,6 +1,6 @@
-# Forest Starter Theme
+# Objectiv Starter Theme
 
-The "Forest" starter theme is an extremely customized and well thought out starter theme built on top of the Timber Framework. This theme provides a specific file structure and asset compilation.
+The Objectiv starter theme is an extremely customized and well thought out starter theme built on top of the Timber Framework. This theme provides a specific file structure and asset compilation.
 
 The [Theme Hook Alliance](https://github.com/zamoose/themehookalliance) is integrated within this theme to allow for extending and easier plugin development.
 
