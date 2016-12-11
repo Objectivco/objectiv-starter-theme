@@ -1,3 +1,16 @@
 .wrap {
     @include outer-container;
 }
+
+.content-sidebar-wrap {
+    @include outer-container;
+
+    .content {
+        @include span-columns(9);
+    }
+
+    .sidebar {
+        @include span-columns(3);
+        @include omega();
+    }
+}

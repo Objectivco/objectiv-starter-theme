@@ -14,13 +14,10 @@
 			{{function('tha_header_after')}}
 
 			<!-- Site Inner -->
-			<div {{function('obj_attr', 'site-inner')}}w>
-				{{function('tha_content_before')}}
-					<main {{function('obj_attr', 'content')}}>
-						{{function('tha_content_top')}}
-						{{function('tha_content_bottom')}}
-					</main>
-				{{function('tha_content_after')}}
+			<div {{function('obj_attr', 'site-inner')}}>
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
 			</div>
 
 			<!-- Site Footer -->

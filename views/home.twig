@@ -1,14 +1,18 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
-		</article>
-	</div><!-- /content-wrapper -->
+	{{function('tha_content_before')}}
+	<div class="content-sidebar-wrap">
+		{{function('tha_content_top')}}
+		<main class="content" itemscope itemtype="http://schema.org/Blog">
+			{% for post in posts %}
+				{% include "components/post.twig" %}
+			{% endfor %}
+		</main>
+		<aside class="sidebar sidebar-primary" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="http://schema.org/WPSidebar">
+			{{primary_sidebar}}
+		</aside>
+		{{function('tha_content_bottom')}}
+	</div>
+	{{function('tha_content_after')}}
 {% endblock %}

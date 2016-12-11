@@ -22,9 +22,22 @@ class ObjectivSite extends TimberSite {
     function __construct() {
         add_theme_support( 'post_thumbnails' );
         add_theme_support( 'menus' );
+        add_action( 'widgets_init', array( $this, 'obj_widgets_init' ) );
         add_filter( 'timber_context', array( $this, 'obj_add_to_context' ) );
         add_filter( 'get_twig', array( $this, 'obj_add_to_twig' ) );
         parent::__construct();
+    }
+
+    /**
+     * Register Sidebars
+     *
+     * @since 1.0
+     */
+    function obj_widgets_init() {
+        register_sidebar( array(
+            'name'          => __( 'Primary Sidebar', 'objectiv' ),
+            'id'            => 'primary-sidebar'
+        ) );
     }
 
     /**
@@ -35,7 +48,7 @@ class ObjectivSite extends TimberSite {
      */
     function obj_add_to_context( $context ) {
         $context['site'] = $this;
-        $context['menu'] = new TimberMenu();
+        $context['menu'] = new TimberMenu( 'testing-menu' );
         return $context;
     }
 
