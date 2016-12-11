@@ -9,7 +9,8 @@ gulp.task('sass', function () {
     gulp.src('assets/sass/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
-        outputStyle: 'nested'
+        outputStyle: 'nested',
+        includePaths: require('node-neat').includePaths
     }).on('error', sass.logError))
     .pipe(sourcemaps.write('./assets/maps'))
     .pipe(gulp.dest('./'));

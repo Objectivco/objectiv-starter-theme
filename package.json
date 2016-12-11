@@ -8,6 +8,8 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^1.9.1"
+    "gulp-sourcemaps": "^1.9.1",
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^1.7.2"
   }
 }

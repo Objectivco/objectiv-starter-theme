@@ -1,0 +1,17 @@
+.site-header {
+    color: $base-font-color;
+    padding: $small-spacing 0;
+
+    @include media($medium-screen-up) {
+        padding: $base-spacing 0;
+    }
+
+    .wrap {
+        @include align-items(center);
+        @include display(flex);
+    }
+}
+
+.logo {
+    margin-bottom: 0;
+}

@@ -1,0 +1,35 @@
+.nav {
+    clear: both;
+    display: none;
+    text-align: right;
+    width: 100%;
+
+    @include media($large-screen) {
+        display: block;
+    }
+
+    .menu-item {
+        display: inline-block;
+        text-align: left;
+
+        &:last-child a {
+            padding-right: 0;
+        }
+
+        > a {
+            color: $base-font-color;
+            display: block;
+            padding: em(25) em(15);
+
+            @include media($large-screen-up) {
+                padding-left: em(20);
+                padding-right: em(20);
+            }
+        }
+
+        .menu-item a:hover,
+        .menu-item a:focus {
+            color: $action-color;
+        }
+    }
+}
