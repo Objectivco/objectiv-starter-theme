@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Timber\\' => array($vendorDir . '/timber/timber/lib'),
+    'PhilippBaschke\\ACFProInstaller\\' => array($vendorDir . '/philippbaschke/acf-pro-installer/src/ACFProInstaller'),
+    'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
     'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
     '' => array($vendorDir . '/asm89/twig-cache-extension/lib'),
 );

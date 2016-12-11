@@ -11,6 +11,14 @@ class ComposerStaticInite931e5ad97dac2531d444a75be2c6d0c
         array (
             'Timber\\' => 7,
         ),
+        'P' => 
+        array (
+            'PhilippBaschke\\ACFProInstaller\\' => 31,
+        ),
+        'D' => 
+        array (
+            'Dotenv\\' => 7,
+        ),
         'C' => 
         array (
             'Composer\\Installers\\' => 20,
@@ -21,6 +29,14 @@ class ComposerStaticInite931e5ad97dac2531d444a75be2c6d0c
         'Timber\\' => 
         array (
             0 => __DIR__ . '/..' . '/timber/timber/lib',
+        ),
+        'PhilippBaschke\\ACFProInstaller\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/philippbaschke/acf-pro-installer/src/ACFProInstaller',
+        ),
+        'Dotenv\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
         'Composer\\Installers\\' => 
         array (
