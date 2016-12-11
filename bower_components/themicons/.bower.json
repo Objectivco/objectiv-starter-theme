@@ -1,0 +1,14 @@
+{
+  "name": "themicons",
+  "homepage": "https://github.com/cedaro/themicons",
+  "version": "2.1.0",
+  "_release": "2.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.1.0",
+    "commit": "fcbf1278fd20cadb62b46fb769e44fb393a9764f"
+  },
+  "_source": "https://github.com/cedaro/themicons.git",
+  "_target": "2.1.0",
+  "_originalSource": "cedaro/themicons"
+}

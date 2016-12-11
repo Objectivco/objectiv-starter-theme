@@ -1,0 +1,28 @@
+{
+  "name": "gamajo-accessible-menu",
+  "authors": [
+    "Gary Jones <gamajo@gamajo.com>"
+  ],
+  "description": "Making WordPress navigation menus a little more accessible.",
+  "main": "dist/jquery.accessible-menu.js",
+  "keywords": [
+    "menu"
+  ],
+  "license": "MIT",
+  "homepage": "http://github.com/GaryJones/accessible-menu",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "_release": "b856e2f780",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "b856e2f780823177f9e113f939913cb54c47db5b"
+  },
+  "_source": "https://github.com/GaryJones/accessible-menu.git",
+  "_target": "master",
+  "_originalSource": "GaryJones/accessible-menu"
+}

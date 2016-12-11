@@ -1,0 +1,14 @@
+{
+  "name": "skip-link-focus",
+  "homepage": "https://github.com/cedaro/skip-link-focus",
+  "version": "0.1.0",
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.0",
+    "commit": "9cf8b32735bdd76690649993199995ab578d9a64"
+  },
+  "_source": "https://github.com/cedaro/skip-link-focus.git",
+  "_target": "~0.1.0",
+  "_originalSource": "skip-link-focus"
+}

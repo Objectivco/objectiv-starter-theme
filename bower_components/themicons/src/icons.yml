@@ -1,0 +1,269 @@
+# http://jrgraphix.net/r/Unicode/E000-F8FF
+
+icons:
+  # Brand Icons
+  # Last Used: f11a
+  - name:    Amazon
+    id:      amazon
+    unicode: f100
+  - name:    Apple
+    id:      apple
+    unicode: f101
+  - name:    Bandcamp
+    id:      bandcamp
+    unicode: f102
+  - name:    Facebook
+    id:      facebook
+    unicode: f103
+  - name:    Facebook (Alt)
+    id:      facebook-alt
+    unicode: f104
+  - name:    Flickr
+    id:      flickr
+    unicode: f105
+  - name:    Google Play
+    id:      googleplay
+    unicode: f106
+  - name:    Google Play (Alt)
+    id:      googleplay-alt
+    unicode: f107
+  - name:    Google+
+    id:      googleplus
+    unicode: f108
+  - name:    Instagram
+    id:      instagram
+    unicode: f109
+  - name:    Last.fm
+    id:      lastfm
+    unicode: f10a
+  - name:    LinkedIn
+    id:      linkedin
+    unicode: f10b
+  - name:    Pinterest
+    id:      pinterest
+    unicode: f10c
+  - name:    Rdio
+    id:      rdio
+    unicode: f10d
+  - name:    ReverbNation
+    id:      reverbnation
+    unicode: f10e
+  - name:    Share
+    id:      share
+    unicode: f10f
+  - name:    Share (Alt)
+    id:      share-alt
+    unicode: f110
+  - name:    SoundCloud
+    id:      soundcloud
+    unicode: f111
+  - name:    Spotify
+    id:      spotify
+    unicode: f112
+  - name:    Tumblr
+    id:      tumblr
+    unicode: f113
+  - name:    Twitter
+    id:      twitter
+    unicode: f114
+  - name:    Vimeo
+    id:      vimeo
+    unicode: f115
+  - name:    WordPress
+    id:      wordpress
+    unicode: f116
+  - name:    Youtube
+    id:      youtube
+    unicode: f117
+  - name:    Vine
+    id:      vine
+    unicode: f11a
+
+
+  # Media Icons
+  # Last Used: f15c
+  - name:    Fast-forward
+    id:      fast-forward
+    unicode: f150
+  - name:    Loop
+    id:      loop
+    unicode: f15a
+  - name:    Pause
+    id:      pause
+    unicode: f151
+  - name:    Play
+    id:      play
+    unicode: f152
+  - name:    Playlist
+    id:      playlist
+    unicode: f153
+  - name:    Repeat
+    id:      repeat
+    unicode: f15b
+  - name:    Rewind
+    id:      rewind
+    unicode: f154
+  - name:    Shuffle
+    id:      shuffle
+    unicode: f15c
+  - name:    Skip-ahead
+    id:      skip-ahead
+    unicode: f155
+  - name:    Skip-back
+    id:      skip-back
+    unicode: f156
+  - name:    Stop
+    id:      stop
+    unicode: f157
+  - name:    Volume Off
+    id:      volume-off
+    unicode: f158
+  - name:    Volume On
+    id:      volume-on
+    unicode: f159
+
+
+  # Post Format Icons
+  # Last Used: f1d9
+  - name:    Aside
+    id:      format-aside
+    unicode: f1d0
+  - name:    Audio
+    id:      format-audio
+    unicode: f1d1
+  - name:    Chat
+    id:      format-chat
+    unicode: f1d2
+  - name:    Gallery
+    id:      format-gallery
+    unicode: f1d3
+  - name:    Image
+    id:      format-image
+    unicode: f1d4
+  - name:    Link
+    id:      format-link
+    unicode: f1d5
+  - name:    Quote
+    id:      format-quote
+    unicode: f1d6
+  - name:    Standard
+    id:      format-standard
+    unicode: f1d7
+  - name:    Status
+    id:      format-status
+    unicode: f1d8
+  - name:    Video
+    id:      format-video
+    unicode: f1d9
+
+
+  # General Icons
+  # Last Used: f221
+  - name:    Arrow Down
+    id:      arrow-down
+    unicode: f200
+  - name:    Arrow Left
+    id:      arrow-left
+    unicode: f201
+  - name:    Arrow Right
+    id:      arrow-right
+    unicode: f202
+  - name:    Arrow Up
+    id:      arrow-up
+    unicode: f203
+  - name:    Calendar
+    id:      calendar
+    unicode: f21a
+  - name:    Cancel
+    id:      cancel
+    unicode: f215
+  - name:    Caret Down
+    id:      caret-down
+    unicode: f204
+  - name:    Caret Left
+    id:      caret-left
+    unicode: f205
+  - name:    Caret Right
+    id:      caret-right
+    unicode: f206
+  - name:    Caret Up
+    id:      caret-up
+    unicode: f207
+  - name:    Cart
+    id:      cart
+    unicode: f218
+  - name:    Category
+    id:      category
+    unicode: f21b
+  - name:    Chevron Down
+    id:      chevron-down
+    unicode: f208
+  - name:    Chevron Left
+    id:      chevron-left
+    unicode: f209
+  - name:    Chevron Right
+    id:      chevron-right
+    unicode: f20a
+  - name:    Chevron Up
+    id:      chevron-up
+    unicode: f20b
+  - name:    Close
+    id:      close
+    unicode: f20c
+  - name:    Comment
+    id:      comment
+    unicode: f219
+  - name:    Edit
+    id:      edit
+    unicode: f21f
+  - name:    Ellipsis
+    id:      ellipsis
+    unicode: f220
+  - name:    Error
+    id:      error
+    unicode: f216
+  - name:    External
+    id:      external
+    unicode: f20d
+  - name:    Feed
+    id:      feed
+    unicode: f20e
+  - name:    Kebab
+    id:      kebab
+    unicode: f221
+  - name:    Link
+    id:      link
+    unicode: f20f
+  - name:    Link (Alt)
+    id:      link-alt
+    unicode: f210
+  - name:    Loading
+    id:      loading
+    unicode: f217
+  - name:    Mail
+    id:      mail
+    unicode: f211
+  - name:    Menu
+    id:      menu
+    unicode: f212
+  - name:    Minus
+    id:      minus
+    unicode: f118
+  - name:    Person
+    id:      person
+    unicode: f213
+  - name:    Plus
+    id:      plus
+    unicode: f119
+  - name:    Restore
+    id:      restore
+    unicode: f214
+  - name:    Search
+    id:      search
+    unicode: f21d
+  - name:    Tag
+    id:      tag
+    unicode: f21c
+  - name:    Time
+    id:      time
+    unicode: f21e
