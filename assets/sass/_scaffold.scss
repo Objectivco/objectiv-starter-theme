@@ -1,16 +1,24 @@
 .wrap {
     @include outer-container;
+    width: 90%;
 }
 
 .content-sidebar-wrap {
     @include outer-container;
+    width: 90%;
 
     .content {
-        @include span-columns(9);
+
+        @include media($large-screen-up) {
+            @include span-columns(9);
+        }
     }
 
     .sidebar {
-        @include span-columns(3);
-        @include omega();
+
+        @include media($large-screen-up) {
+            @include span-columns(3);
+            @include omega();
+        }
     }
 }

@@ -9,11 +9,13 @@
 @import "bourbon";
 @import "base/base";
 @import "neat";
-
 @import "bower_components/normalize-css/normalize.css";
 
+@import "mixins";
 @import "defaults";
 @import "scaffold";
-@import "site-header";
-@import "navigation";
-@import "site-footer";
+
+@import "components/site-header";
+@import "components/navigation";
+@import "components/site-footer";
+@import "components/sidebar";
