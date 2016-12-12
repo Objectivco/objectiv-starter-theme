@@ -61,7 +61,7 @@ textarea {
 input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], input:not([type]), textarea {
   appearance: none;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
@@ -70,7 +70,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   transition: border-color 150ms ease;
   width: 100%; }
   input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, input:not([type]):hover, textarea:hover {
-    border-color: #b1b1b1; }
+    border-color: #bebebe; }
   input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, input:not([type]):focus, textarea:focus {
     border-color: #1565c0;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(18, 89, 169, 0.7);
@@ -79,7 +79,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
     background-color: #f2f2f2;
     cursor: not-allowed; }
     input[type="color"]:disabled:hover, input[type="date"]:disabled:hover, input[type="datetime"]:disabled:hover, input[type="datetime-local"]:disabled:hover, input[type="email"]:disabled:hover, input[type="month"]:disabled:hover, input[type="number"]:disabled:hover, input[type="password"]:disabled:hover, input[type="search"]:disabled:hover, input[type="tel"]:disabled:hover, input[type="text"]:disabled:hover, input[type="time"]:disabled:hover, input[type="url"]:disabled:hover, input[type="week"]:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover {
-      border: 1px solid #ddd; }
+      border: 1px solid #eee; }
   input[type="color"]::placeholder, input[type="date"]::placeholder, input[type="datetime"]::placeholder, input[type="datetime-local"]::placeholder, input[type="email"]::placeholder, input[type="month"]::placeholder, input[type="number"]::placeholder, input[type="password"]::placeholder, input[type="search"]::placeholder, input[type="tel"]::placeholder, input[type="text"]::placeholder, input[type="time"]::placeholder, input[type="url"]::placeholder, input[type="week"]::placeholder, input:not([type])::placeholder, textarea::placeholder {
     color: #858585; }
 
@@ -127,13 +127,24 @@ dt {
 dd {
   margin: 0; }
 
-figure {
-  margin: 0; }
-
+embed,
+iframe,
 img,
-picture {
+object,
+video,
+figure,
+.wp-caption {
+  max-width: 100%; }
+
+img {
+  height: auto;
   margin: 0;
   max-width: 100%; }
+
+a:hover img,
+a:focus img {
+  opacity: 0.9;
+  transition: opacity 150ms ease; }
 
 table {
   border-collapse: collapse;
@@ -142,13 +153,13 @@ table {
   width: 100%; }
 
 th {
-  border-bottom: 1px solid #a6a6a6;
+  border-bottom: 1px solid #b3b3b3;
   font-weight: 600;
   padding: 0.625em 0;
   text-align: left; }
 
 td {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
   padding: 0.625em 0; }
 
 tr,
@@ -159,7 +170,7 @@ th {
 body {
   color: #333;
   font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  font-size: 1em;
+  font-size: 90%;
   line-height: 1.5; }
 
 h1,
@@ -169,9 +180,45 @@ h4,
 h5,
 h6 {
   font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
-  font-size: 1.333em;
+  font-size: 1em;
   line-height: 1.2;
   margin: 0 0 0.625em; }
+
+h1,
+.h1 {
+  font-size: 32px; }
+  @media only screen and (min-width: 900px) {
+    h1,
+    .h1 {
+      font-size: 40px; } }
+
+h2,
+.h2 {
+  font-size: 26px; }
+  @media only screen and (min-width: 900px) {
+    h2,
+    .h2 {
+      font-size: 32px; } }
+
+h3,
+.h3 {
+  font-size: 22px; }
+  @media only screen and (min-width: 900px) {
+    h3,
+    .h3 {
+      font-size: 28px; } }
+
+h4,
+.h4 {
+  font-size: 18px; }
+
+h5,
+.h5 {
+  font-size: 1em; }
+
+h6,
+.h6 {
+  font-size: 1em; }
 
 p {
   margin: 0 0 0.625em; }
@@ -184,11 +231,96 @@ a {
     color: #104c90; }
 
 hr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
   border-left: 0;
   border-right: 0;
   border-top: 0;
   margin: 2.5em 0; }
+
+pre {
+  background: #eee;
+  color: #333;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em;
+  margin-bottom: 0.625em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 3% 10% 3% 5%;
+  position: relative;
+  tab-size: 4;
+  white-space: pre-wrap; }
+
+code,
+kbd,
+tt,
+var {
+  background: #eee;
+  border-radius: 2px;
+  color: red;
+  font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
+  font-size: 1em;
+  padding: 3px 5px; }
+
+address {
+  font-style: italic;
+  margin: 0 0 0.625em; }
+
+abbr,
+acronym {
+  border-bottom: 1px dotted #eee;
+  cursor: help; }
+
+mark,
+ins {
+  background: #c2dcf8;
+  text-decoration: none; }
+
+sup,
+sub {
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  bottom: 1ex; }
+
+sub {
+  top: 0.5ex; }
+
+small {
+  font-size: 75%; }
+
+big {
+  font-size: 125%; }
+
+figure {
+  margin: 0; }
+
+blockquote,
+cite,
+em,
+i {
+  font-style: italic; }
+
+blockquote {
+  color: #333;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-style: italic; }
+  blockquote cite {
+    display: block;
+    font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+    font-style: normal;
+    margin-top: 15px; }
+    blockquote cite::before {
+      content: "\2014";
+      padding-right: 10px; }
+
+q {
+  color: #333;
+  font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-style: italic; }
 
 html {
   box-sizing: border-box; }
@@ -282,7 +414,7 @@ html {
       color: #1565c0; }
 
 .site-footer {
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #eee;
   margin-top: 0.625em;
   padding: 0.625em 0; }
   @media screen and (min-width: 900px) {

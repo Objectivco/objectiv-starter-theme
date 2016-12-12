@@ -1,9 +1,21 @@
-figure {
-    margin: 0;
+embed,
+iframe,
+img,
+object,
+video,
+figure,
+.wp-caption {
+    max-width: 100%;
 }
 
-img,
-picture {
+img {
+    height: auto;
     margin: 0;
     max-width: 100%;
+}
+
+a:hover img,
+a:focus img {
+    opacity: 0.9;
+    transition: opacity $base-duration $base-timing;
 }
