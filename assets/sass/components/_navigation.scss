@@ -8,6 +8,10 @@
         display: block;
     }
 
+    ul {
+        @include inline-li;
+    }
+
     .menu-item {
         display: inline-block;
         text-align: left;

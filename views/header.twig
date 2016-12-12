@@ -1,11 +1,11 @@
-<header {{function('obj_attr', 'site-header')}} itemscope itemtype="http://schema.org/WPHeader">
+<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
     {{function('tha_header_top')}}
     {% block header %}
         <div class="wrap">
             <h1 class="logo" role="banner">
                 <a class="logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
             </h1>
-            <nav {{function('obj_attr', 'nav', 'primary')}} itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement" role="navigation">
+            <nav class="nav nav-primary" itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement" role="navigation">
                 {% include "menu.twig" with {'menu': menu.get_items} %}
             </nav><!-- #nav -->
         </div>

@@ -1,19 +1,52 @@
 <?php
 
-// Include all Composer Modules
-require_once( __DIR__ . '/vendor/autoload.php' );
-
-include( __DIR__ . '/includes/tha-theme-hooks.php' );
-include( __DIR__ . '/includes/attributes.php' );
-
-// Initialize Timber
-$timber = new \Timber\Timber();
-
-// Set the Timber directories that Twig templates can be found in
-Timber::$dirname = array( 'templates', 'views' );
+$GLOBALS['objectiv_prefix'] = 'objectiv';
 
 /**
- * Set up the site object
+ * Current version of the parent theme.
+ *
+ * @since 1.0
+ */
+define( 'PARENT_THEME_VERSION', '1.0.0' );
+
+/**
+ * Template's directory with trailing slash
+ *
+ * @since 1.0.0
+ * @uses get_template_directory()
+ * @uses trailingslashit()
+ */
+define( 'PARENT_THEME_DIR', trailingslashit( get_template_directory() ) );
+
+/**
+ * Template's URI with trailing slash
+ *
+ * @since 1.0.0
+ * @uses get_template_directory_uri()
+ * @uses trailingslashit()
+ */
+define( 'PARENT_THEME_URI', trailingslashit( get_template_directory_uri() ) );
+
+/**
+ * Require all needed files for the theme to work
+ *
+ * @since 1.0.0
+ */
+require_once( PARENT_THEME_DIR . 'vendor/autoload.php' );
+require_once( PARENT_THEME_DIR . 'includes/tha-theme-hooks.php' );
+require_once( PARENT_THEME_DIR . 'includes/attributes.php' );
+require_once( PARENT_THEME_DIR . 'includes/scripts.php' );
+
+/**
+ * Initialize and set up Timber views location
+ *
+ * @since 1.0.0
+ */
+$timber = new \Timber\Timber();
+Timber::$dirname = array( 'views' );
+
+/**
+ * Set up Timber's Site Object
  *
  * @since 1.0
  */

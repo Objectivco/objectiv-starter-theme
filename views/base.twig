@@ -6,15 +6,15 @@
 		{{function('tha_body_top')}}
 
 		<!-- Site Container -->
-		<div {{function('obj_attr', 'site-container')}}>
+		<div class="site-container">
 
 			<!-- Site Header -->
 			{{function('tha_header_before')}}
-				{% include 'header.twig' %}
+				{% include('header.twig') %}
 			{{function('tha_header_after')}}
 
 			<!-- Site Inner -->
-			<div {{function('obj_attr', 'site-inner')}}>
+			<div class="site-inner">
 				{% block content %}
 					Sorry, no content
 				{% endblock %}
@@ -23,7 +23,7 @@
 			<!-- Site Footer -->
 			{% block footer %}
 				{{function('tha_footer_before')}}
-					{% include 'footer.twig' %}
+					{% include('footer.twig') %}
 				{{function('tha_footer_after')}}
 			{% endblock %}
 
