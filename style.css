@@ -113,8 +113,8 @@ body {
 
 ol,
 ul {
-  margin-bottom: 0.625em;
-  margin-left: 0.625em; }
+  margin-bottom: 2.5em;
+  margin-left: 0.3125em; }
   @media only screen and (min-width: 900px) {
     ol,
     ul {
@@ -131,7 +131,11 @@ ul > li {
 
 li ol,
 li ul {
-  margin-top: 1%; }
+  margin-top: 1%;
+  margin-bottom: 1%; }
+
+dl {
+  margin-bottom: 2.5em; }
 
 dt {
   font-weight: bold;
@@ -139,7 +143,7 @@ dt {
 
 dd {
   margin: 0;
-  margin-bottom: 0.3125em; }
+  margin-bottom: 1.25em; }
 
 embed,
 iframe,
@@ -161,20 +165,25 @@ a:focus img {
   transition: opacity 150ms ease; }
 
 table {
+  border: 1px solid #eee;
+  border-color: #e1e1e1;
   border-collapse: collapse;
-  margin: 0.625em 0;
+  border-radius: 3px;
+  margin: 2.5em 0;
   table-layout: fixed;
   width: 100%; }
 
 th {
-  border-bottom: 1px solid #b3b3b3;
-  font-weight: 600;
-  padding: 0.625em 0;
+  background: #eee;
+  border-bottom: 1px solid #eee;
+  border-color: #e1e1e1;
+  font-weight: bold;
+  padding: 0.625em;
   text-align: left; }
 
 td {
   border-bottom: 1px solid #eee;
-  padding: 0.625em 0; }
+  padding: 0.625em; }
 
 tr,
 td,
@@ -235,7 +244,7 @@ h6,
   font-size: 1em; }
 
 p {
-  margin: 0 0 0.625em; }
+  margin: 0 0 2.5em; }
 
 a {
   color: #1565c0;
@@ -256,7 +265,7 @@ pre {
   color: #333;
   font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
   font-size: 1em;
-  margin-bottom: 0.625em;
+  margin-bottom: 2.5em;
   max-width: 100%;
   overflow: auto;
   padding: 3% 10% 3% 5%;
@@ -277,7 +286,7 @@ var {
 
 address {
   font-style: italic;
-  margin: 0 0 0.625em; }
+  margin: 0 0 2.5em; }
 
 abbr,
 acronym {

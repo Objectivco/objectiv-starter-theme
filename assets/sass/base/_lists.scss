@@ -1,7 +1,7 @@
 ol,
 ul {
-    margin-bottom: $small-spacing;
-	margin-left: $small-spacing;
+    margin-bottom: $base-spacing;
+	margin-left: $small-spacing/2;
 
     @media only screen and (min-width:900px) {
         margin-left: $small-spacing;
@@ -23,8 +23,12 @@ ul > li {
 li ol,
 li ul {
 	margin-top: 1%;
+    margin-bottom: 1%;
 }
 
+dl {
+    margin-bottom: $base-spacing;
+}
 
 dt {
     font-weight: bold;
@@ -33,5 +37,5 @@ dt {
 
 dd {
     margin: 0;
-    margin-bottom: $small-spacing/2;
+    margin-bottom: $base-spacing/2;
 }

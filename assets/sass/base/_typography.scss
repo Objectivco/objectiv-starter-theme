@@ -60,7 +60,7 @@ h6,
 }
 
 p {
-    margin: 0 0 $small-spacing;
+    margin: 0 0 $base-spacing;
 }
 
 a {
@@ -89,7 +89,7 @@ pre {
 	color: $base-font-color;
 	font-family: $monospace;
 	font-size: $base-font-size;
-	margin-bottom: $small-spacing;
+	margin-bottom: $base-spacing;
 	max-width: 100%;
 	overflow: auto;
 	padding: 3% 10% 3% 5%;
@@ -112,7 +112,7 @@ var {
 
 address {
 	font-style: italic;
-	margin: 0 0 $small-spacing;
+	margin: 0 0 $base-spacing;
 }
 
 abbr,
