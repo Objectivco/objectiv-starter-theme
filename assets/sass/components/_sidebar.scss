@@ -1,0 +1,7 @@
+.sidebar {
+
+    ul,
+    ol {
+        @include inline-li;
+    }
+}
