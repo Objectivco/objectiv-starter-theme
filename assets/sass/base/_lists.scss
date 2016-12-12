@@ -1,19 +1,37 @@
-ul,
-ol {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+ol,
+ul {
+    margin-bottom: $small-spacing;
+	margin-left: $small-spacing;
+
+    @media only screen and (min-width:900px) {
+        margin-left: $small-spacing;
+    }
 }
 
-dl {
-    margin: 0;
+li {
+	margin-bottom: 1%;
 }
+
+ol > li {
+	list-style-type: decimal;
+}
+
+ul > li {
+	list-style-type: disc;
+}
+
+li ol,
+li ul {
+	margin-top: 1%;
+}
+
 
 dt {
-    font-weight: 600;
+    font-weight: bold;
     margin: 0;
 }
 
 dd {
     margin: 0;
+    margin-bottom: $small-spacing/2;
 }

@@ -111,21 +111,35 @@ html,
 body {
   height: 100%; }
 
-ul,
-ol {
-  list-style-type: none;
-  margin: 0;
-  padding: 0; }
+ol,
+ul {
+  margin-bottom: 0.625em;
+  margin-left: 0.625em; }
+  @media only screen and (min-width: 900px) {
+    ol,
+    ul {
+      margin-left: 0.625em; } }
 
-dl {
-  margin: 0; }
+li {
+  margin-bottom: 1%; }
+
+ol > li {
+  list-style-type: decimal; }
+
+ul > li {
+  list-style-type: disc; }
+
+li ol,
+li ul {
+  margin-top: 1%; }
 
 dt {
-  font-weight: 600;
+  font-weight: bold;
   margin: 0; }
 
 dd {
-  margin: 0; }
+  margin: 0;
+  margin-bottom: 0.3125em; }
 
 embed,
 iframe,
