@@ -1,0 +1,11 @@
+html,
+body {
+    overflow-x: hidden;
+}
+
+.site-header,
+.site-container,
+.site-inner,
+.site-footer {
+    @include clearfix;
+}
