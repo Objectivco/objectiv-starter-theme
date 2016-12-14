@@ -8,6 +8,12 @@
             <nav class="nav nav-primary" itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement" role="navigation">
                 {% include "menu.twig" with {'menu': menu.get_items} %}
             </nav><!-- #nav -->
+            <div class="nav-toggle nav-primary-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     {% endblock %}
     {{function('tha_header_bottom')}}

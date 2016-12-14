@@ -1,3 +1,14 @@
+body {
+    left: 0;
+    position: relative;
+    transition: left 0.5s $base-timing;
+
+    &.nav-is-open {
+        left: -260px;
+        overflow-y: hidden;
+    }
+}
+
 .wrap {
     @include outer-container;
     width: 90%;

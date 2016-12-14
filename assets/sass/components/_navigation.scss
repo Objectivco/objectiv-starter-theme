@@ -1,12 +1,7 @@
 .nav {
     clear: both;
-    display: none;
     text-align: right;
     width: 100%;
-
-    @include media($large-screen) {
-        display: block;
-    }
 
     ul {
         @include inline-li;
@@ -34,6 +29,106 @@
         .menu-item a:hover,
         .menu-item a:focus {
             color: $action-color;
+        }
+    }
+}
+
+.nav-toggle {
+    @include transform(rotate(0deg));
+    @include transition(all 0.5s ease-in-out);
+    width: 20px;
+    height: 12px;
+    margin-left: auto;
+    position: relative;
+    cursor: pointer;
+
+    @include media($large-screen-up) {
+        display: none;
+    }
+
+    span {
+        @include transform(rotate(0deg));
+        @include transition(all 0.25s ease-in-out);
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background: $dark-gray;
+        border-radius: 0;
+        opacity: 1;
+        left: 0;
+
+        &:nth-child(1) {
+            top: 0px;
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+            top: 5px;
+        }
+
+        &:nth-child(4) {
+            top: 10px;
+        }
+    }
+
+    &.nav-is-open span:nth-child(1) {
+        opacity: 0;
+    }
+
+    &.nav-is-open span:nth-child(2) {
+        @include transform(rotate(45deg));
+    }
+
+    &.nav-is-open span:nth-child(3) {
+        @include transform(rotate(-45deg));
+    }
+
+    &.nav-is-open span:nth-child(4) {
+        top: 18px;
+        width: 0%;
+        left: 50%;
+    }
+}
+
+.nav-primary {
+    @include transition(right 0.5s $base-timing);
+    background: $dark-gray;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    z-index: 1000;
+
+    @include media($large-screen-up) {
+        background: none;
+        margin-left: auto;
+        position: static;
+        width: auto;
+    }
+
+    &.nav-is-open {
+        right: 0;
+    }
+
+    .menu-item {
+        display: block;
+
+        @include media($large-screen-up) {
+            display: inline-block;
+        }
+
+        > a {
+            color: #eee;
+            padding: em(15);
+
+            @include media($large-screen-up) {
+                color: $dark-gray;
+                padding: em(25) em(15);
+            }
         }
     }
 }

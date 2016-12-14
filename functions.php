@@ -35,7 +35,6 @@ define( 'PARENT_THEME_URI', trailingslashit( get_template_directory_uri() ) );
 require_once( PARENT_THEME_DIR . 'vendor/autoload.php' );
 require_once( PARENT_THEME_DIR . 'includes/tha-theme-hooks.php' );
 require_once( PARENT_THEME_DIR . 'includes/attributes.php' );
-require_once( PARENT_THEME_DIR . 'includes/scripts.php' );
 
 /**
  * Initialize and set up Timber views location
@@ -55,10 +54,38 @@ class ObjectivSite extends TimberSite {
     function __construct() {
         add_theme_support( 'post_thumbnails' );
         add_theme_support( 'menus' );
+        add_action( 'wp_enqueue_scripts', array( $this, 'obj_enqueue_scripts' ) );
         add_action( 'widgets_init', array( $this, 'obj_widgets_init' ) );
         add_filter( 'timber_context', array( $this, 'obj_add_to_context' ) );
         add_filter( 'get_twig', array( $this, 'obj_add_to_twig' ) );
         parent::__construct();
+    }
+
+    /**
+     * Load JS files for the theme
+     *
+     * @since 1.0
+     */
+    function obj_enqueue_scripts() {
+
+        // Register mobileMenu.js
+        wp_enqueue_script(
+            'objectiv-mobile',
+            PARENT_THEME_URI . "assets/js/mobileMenu.js",
+            array( 'jquery',  ),
+            PARENT_THEME_VERSION,
+            true
+        );
+
+        // Register theme.js
+        wp_enqueue_script(
+            'objectiv-theme',
+            PARENT_THEME_URI . "assets/js/theme.js",
+            array( 'jquery' ),
+            PARENT_THEME_VERSION,
+            true
+        );
+
     }
 
     /**
