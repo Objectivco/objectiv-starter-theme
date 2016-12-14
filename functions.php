@@ -68,19 +68,10 @@ class ObjectivSite extends TimberSite {
      */
     function obj_enqueue_scripts() {
 
-        // Register mobileMenu.js
-        wp_enqueue_script(
-            'objectiv-mobile',
-            PARENT_THEME_URI . "assets/js/mobileMenu.js",
-            array( 'jquery',  ),
-            PARENT_THEME_VERSION,
-            true
-        );
-
-        // Register theme.js
+        // Register all js
         wp_enqueue_script(
             'objectiv-theme',
-            PARENT_THEME_URI . "assets/js/theme.js",
+            PARENT_THEME_URI . "assets/js/min/all.min.js",
             array( 'jquery' ),
             PARENT_THEME_VERSION,
             true

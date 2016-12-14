@@ -1,26 +1,44 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var concat = require('gulp-concat');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
 
 /**
  * Task to compile Sass styles
  */
-gulp.task('sass', function () {
+gulp.task('sass', function() {
     gulp.src('assets/sass/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-        outputStyle: 'nested',
-        includePaths: require('node-neat').includePaths
-    }).on('error', sass.logError))
-    .pipe(sourcemaps.write('./assets/maps'))
-    .pipe(gulp.dest('./'));
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            outputStyle: 'nested',
+            includePaths: require('node-neat').includePaths
+        }).on('error', sass.logError))
+        .pipe(sourcemaps.write('./assets/maps'))
+        .pipe(gulp.dest('./'));
+});
+
+/**
+ * Task to concat and compile JS files
+ */
+gulp.task('js', function() {
+    gulp.src('assets/js/*.js')
+        .pipe(concat('all.js'))
+        .pipe(rename('all.min.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('assets/js/min/'));
 });
 
 /**
  * Watch tasks
  */
-gulp.task('sass:watch', function () {
+gulp.task('sass:watch', function() {
     gulp.watch('./assets/sass/**/*.scss', ['sass']);
 });
 
-gulp.task('default', ['sass', 'sass:watch']);
+gulp.task('js:watch', function() {
+    gulp.watch('./assets/js/**/*.js', ['js']);
+});
+
+gulp.task('default', ['sass', 'sass:watch', 'js', 'js:watch']);
