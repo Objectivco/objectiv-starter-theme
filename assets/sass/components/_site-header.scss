@@ -15,4 +15,13 @@
 
 .logo {
     margin-bottom: 0;
+
+    > a {
+        @include transition(color $base-duration $base-timing);
+        color: $base-font-color;
+
+        &:hover {
+            color: $action-color;
+        }
+    }
 }

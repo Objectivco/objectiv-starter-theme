@@ -1,0 +1,30 @@
+.post {
+    margin-bottom: $base-spacing*2;
+}
+
+.entry-title {
+    margin-bottom: $small-spacing;
+
+    > a {
+        @include transition(color $base-duration $base-timing);
+        color: $base-font-color;
+
+        &:hover {
+            color: $action-color;
+        }
+    }
+}
+
+.entry-meta {
+    color: darken($medium-gray, 10);
+    margin-bottom: 20px;
+
+    a {
+        @include transition(color $base-duration $base-timing);
+        color: darken($medium-gray, 10);
+
+        &:hover {
+            color: $action-color;
+        }
+    }
+}

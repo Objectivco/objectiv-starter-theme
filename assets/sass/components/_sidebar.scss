@@ -1,7 +1,25 @@
 .sidebar {
-
+    padding-left: $base-spacing;
+    
     ul,
     ol {
         @include inline-li;
+    }
+
+    li > a {
+        @include transition(color $base-duration $base-timing);
+        color: $dark-gray;
+
+        &:hover {
+            color: $action-color;
+        }
+    }
+}
+
+.widgettitle {
+    font-size: em(22);
+
+    @include media($large-screen-up) {
+        font-size: em(28);
     }
 }
