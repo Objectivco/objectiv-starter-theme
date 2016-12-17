@@ -28,11 +28,23 @@ define( 'PARENT_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'PARENT_THEME_URI', trailingslashit( get_template_directory_uri() ) );
 
 /**
+ * Admin images directory with trailing slash
+ */
+define( 'PARENT_THEME_ADMIN_IMAGES_DIR', trailingslashit( PARENT_THEME_URI . 'admin/images' ) );
+
+/**
  * Require all needed files for the theme to work
  *
  * @since 1.0.0
  */
 require_once( PARENT_THEME_DIR . 'vendor/autoload.php' );
+
+// Admin
+require_once( PARENT_THEME_DIR . 'admin/classes/admin.php' );
+require_once( PARENT_THEME_DIR . 'admin/settings.php' );
+require_once( PARENT_THEME_DIR . 'admin/menu.php' );
+
+// Front End
 require_once( PARENT_THEME_DIR . 'includes/tha-theme-hooks.php' );
 require_once( PARENT_THEME_DIR . 'includes/attributes.php' );
 
@@ -52,8 +64,8 @@ Timber::$dirname = array( 'views' );
 class ObjectivSite extends TimberSite {
 
     function __construct() {
-        add_theme_support( 'post_thumbnails' );
         add_theme_support( 'menus' );
+        add_theme_support( 'post_thumbnails' );
         add_action( 'wp_enqueue_scripts', array( $this, 'obj_enqueue_scripts' ) );
         add_action( 'widgets_init', array( $this, 'obj_widgets_init' ) );
         add_filter( 'timber_context', array( $this, 'obj_add_to_context' ) );
