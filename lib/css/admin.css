@@ -11,7 +11,7 @@
     display: flex;
     margin: 0 auto;
     padding: 5px 0;
-    max-width: 1040px;
+    max-width: 940px;
 }
 
 .obj-masthead__logo-container {
@@ -32,16 +32,52 @@
     color: #333;
 }
 
-.obj-body {
-    margin: 40px 0;
-}
-
-.obj-body__container {
+.obj-body__container,
+.obj-nav__panel {
     background: #fff;
     border-radius: 2px;
     box-shadow: 0 0 0 1px rgba(200, 215, 225, 0.5), 0 1px 2px #e9eff3;
     box-sizing: border-box;
     margin: 0 auto;
-    max-width: 1040px;
+    max-width: 940px;
     padding: 15px;
+}
+
+.obj-nav {
+    margin-top: 40px;
+}
+
+.obj-nav__panel {
+    padding: 0;
+}
+
+.obj-nav-tabs__list {
+    margin: 0;
+}
+
+.obj-nav-tabs__list-li {
+    display: inline-block;
+    margin: 0;
+}
+
+.obj-nav-tabs__list-li a {
+    border-bottom: 2px solid transparent;
+    color: #FF4247;
+    display: block;
+    font-size: 14px;
+    padding: 16px 16px 14px 16px;
+    text-decoration: none;
+}
+
+.obj-nav-tabs__list-li:first-child a.is-current-tab {
+    border-bottom-left-radius: 2px;
+}
+
+.obj-nav-tabs__list-li a.is-current-tab {
+    border-bottom: 2px solid black;
+    color: black;
+}
+
+.obj-body {
+    margin: 20px 0;
 }

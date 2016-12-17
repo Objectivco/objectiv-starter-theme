@@ -48,9 +48,21 @@ class ObjectivSettings extends ObjectivAdmin {
                 </ul>
             </div>
         </div>
+        <div class="obj-nav">
+            <div class="obj-nav__panel">
+                <div class="obj-nav-group">
+                    <div class="obj-nav-tabs">
+                        <ul class="obj-nav-tabs__list">
+                            <li class="obj-nav-tabs__list-li"><a href="#">General</a></li>
+                            <li class="obj-nav-tabs__list-li"><a href="#" class="is-current-tab">SEO</a></li>
+                            <li class="obj-nav-tabs__list-li"><a href="#">Analytics</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="obj-body">
             <div class="obj-body__container">
-                TEST
             </div>
         </div>
         <?php
