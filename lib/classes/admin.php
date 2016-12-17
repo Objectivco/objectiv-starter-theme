@@ -97,7 +97,5 @@ abstract class ObjectivAdmin {
     /**
      * Create the body of the admin page
      */
-    public function admin() {
-
-    }
+    abstract public function admin();
 }

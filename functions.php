@@ -29,8 +29,19 @@ define( 'PARENT_THEME_URI', trailingslashit( get_template_directory_uri() ) );
 
 /**
  * Admin images directory with trailing slash
+ *
+ * @since 1.0.0
+ * @uses tralingslashit()
  */
-define( 'PARENT_THEME_ADMIN_IMAGES_DIR', trailingslashit( PARENT_THEME_URI . 'admin/images' ) );
+define( 'PARENT_THEME_ADMIN_IMAGES_DIR', trailingslashit( PARENT_THEME_URI . 'lib/admin/images' ) );
+
+/**
+ * Themes LIB URL
+ *
+ * @since 1.0.0
+ * @uses trailingslashit()
+ */
+define( 'PARENT_THEME_LIB_DIR', trailingslashit( PARENT_THEME_DIR . 'lib' ) );
 
 /**
  * Require all needed files for the theme to work
@@ -40,9 +51,10 @@ define( 'PARENT_THEME_ADMIN_IMAGES_DIR', trailingslashit( PARENT_THEME_URI . 'ad
 require_once( PARENT_THEME_DIR . 'vendor/autoload.php' );
 
 // Admin
-require_once( PARENT_THEME_DIR . 'admin/classes/admin.php' );
-require_once( PARENT_THEME_DIR . 'admin/settings.php' );
-require_once( PARENT_THEME_DIR . 'admin/menu.php' );
+require_once( PARENT_THEME_DIR . 'lib/classes/admin.php' );
+require_once( PARENT_THEME_DIR . 'lib/admin/settings.php' );
+require_once( PARENT_THEME_DIR . 'lib/admin/menu.php' );
+require_once( PARENT_THEME_DIR . 'lib/css/load-styles.php' );
 
 // Front End
 require_once( PARENT_THEME_DIR . 'includes/tha-theme-hooks.php' );
