@@ -33,7 +33,8 @@
 }
 
 .obj-body__container,
-.obj-nav__panel {
+.obj-nav__panel,
+.obj-footer__container {
     background: #fff;
     border-radius: 2px;
     box-shadow: 0 0 0 1px rgba(200, 215, 225, 0.5), 0 1px 2px #e9eff3;
@@ -80,4 +81,42 @@
 
 .obj-body {
     margin: 20px 0;
+}
+
+.obj-footer__container {
+    clear: both;
+    overflow: auto;
+}
+
+.obj-footer__image,
+.obj-footer__content {
+    display: block;
+    float: left;
+}
+
+.obj-footer__image {
+    margin-right: 2%;
+    width: 15%;
+}
+
+.obj-footer__content {
+    width: 78%;
+}
+
+.obj-footer__image img {
+    border-radius: 2px;
+    max-width: 100%;
+}
+
+.obj-footer__header {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.obj-footer__description {
+    font-size: 14px;
+}
+
+.obj-footer__description:last-child {
+    margin-bottom: 0;
 }
