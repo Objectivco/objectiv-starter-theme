@@ -35,6 +35,7 @@ class ObjectivSettings extends ObjectivAdmin {
     }
 
     public function admin() {
+        $active_tab = isset( $_GET[ 'tab' ] ) ? $_GET[ 'tab' ] : 'general';
         ?>
         <div class="obj-masthead">
             <div class="obj-masthead__container">
@@ -53,9 +54,9 @@ class ObjectivSettings extends ObjectivAdmin {
                 <div class="obj-nav-group">
                     <div class="obj-nav-tabs">
                         <ul class="obj-nav-tabs__list">
-                            <li class="obj-nav-tabs__list-li"><a href="#">General</a></li>
-                            <li class="obj-nav-tabs__list-li"><a href="#" class="is-current-tab">SEO</a></li>
-                            <li class="obj-nav-tabs__list-li"><a href="#">Analytics</a></li>
+                            <li class="obj-nav-tabs__list-li"><a href="?page=objectiv&tab=general" class="<?php echo $active_tab == 'general' ? 'is-current-tab' : ''; ?>">General</a></li>
+                            <li class="obj-nav-tabs__list-li"><a href="?page=objectiv&tab=seo" class="<?php echo $active_tab == 'seo' ? 'is-current-tab' : ''; ?>">SEO</a></li>
+                            <li class="obj-nav-tabs__list-li"><a href="?page=objectiv&tab=analytics" class="<?php echo $active_tab == 'analytics' ? 'is-current-tab' : ''; ?>">Analytics</a></li>
                         </ul>
                     </div>
                 </div>
@@ -63,6 +64,15 @@ class ObjectivSettings extends ObjectivAdmin {
         </div>
         <div class="obj-body">
             <div class="obj-body__container">
+                <?php
+                if ( $active_tab == 'general' ) {
+                    echo 'general';
+                } else if ( $active_tab == 'seo' ) {
+                    echo 'seo';
+                } else if ( $active_tab == 'analytics' ){
+                    echo 'analytics';
+                }
+                ?>
             </div>
         </div>
         <?php
