@@ -60,15 +60,33 @@ class ObjectivSettings extends ObjectivAdmin {
         </div>
         <div class="obj-body">
             <div class="obj-body__container">
-                <?php
-                if ( $active_tab == 'general' ) {
-                    echo 'general';
-                } else if ( $active_tab == 'seo' ) {
-                    echo 'seo';
-                } else if ( $active_tab == 'analytics' ){
-                    echo 'analytics';
-                }
-                ?>
+                <form method="post" action="options.php">
+                    <?php if ( $active_tab == 'general' ): ?>
+                        <div class="obj-body__section">
+                            <h3 class="obj-body__section-title">General Options</h3>
+                            <ul class="obj-section__list">
+
+                            </ul>
+                        </div>
+                    <?php elseif ( $active_tab == 'seo' ): ?>
+                        <div class="obj-body__section">
+                            <h3 class="obj-body__section-title">SEO Options</h3>
+                            <ul class="obj-section__list">
+
+                            </ul>
+                        </div>
+                    <?php elseif ( $active_tab == 'analytics' ): ?>
+                        <div class="obj-body__section">
+                            <h3 class="obj-body__section-title">Analytics Options</h3>
+                            <ul class="obj-section__list">
+
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+                    <div class="obj-body__footer">
+                        <?php submit_button( 'Save Options', 'primary', 'submit', false ); ?>
+                    </div>
+                </form>
             </div>
         </div>
         <div class="obj-footer">

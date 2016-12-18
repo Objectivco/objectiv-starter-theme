@@ -83,6 +83,15 @@
     margin: 20px 0;
 }
 
+.obj-body__footer {
+    clear: both;
+    overflow: auto;
+}
+
+.obj-body__footer .button {
+    float: right;
+}
+
 .obj-footer__container {
     clear: both;
     overflow: auto;
@@ -120,4 +129,8 @@
 
 .obj-footer__description:last-child {
     margin-bottom: 0;
+}
+
+.obj-body__section-title {
+    margin-top: 0;
 }
