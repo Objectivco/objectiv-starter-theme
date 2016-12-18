@@ -110,7 +110,8 @@
 
 .obj-footer__header {
     font-size: 14px;
-    margin-bottom: 0;
+    margin: 0;
+    margin-top: 0.5em;
 }
 
 .obj-footer__description {
