@@ -1,0 +1,26 @@
+.pagination {
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(space-between);
+
+    .next,
+    .prev {
+        width: 10%;
+    }
+
+    .next {
+        text-align: right;
+    }
+
+    ul.pages {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        width: 80%;
+
+        li {
+            display: inline-block;
+            list-style-type: none;
+        }
+    }
+}
