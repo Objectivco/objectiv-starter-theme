@@ -8,6 +8,7 @@
 			{% for post in posts %}
 				{% include "components/post.twig" %}
 			{% endfor %}
+			{% include "components/pagination.twig" %}
 		</main>
 		{% include "components/sidebar.twig" %}
 		{{function('tha_content_bottom')}}

@@ -1,8 +1,8 @@
 <?php
 /**
- * Home Template File
+ * Archive Template File
  *
- * This is the logic for the blog page.
+ * This is the logic for the all archive pages.
  *
  * @package WordPress
  * @subpackage Timber
@@ -13,6 +13,6 @@
 $context = Timber::get_context();
 $context['posts'] = new Timber\PostQuery();
 $context['primary_sidebar'] = Timber::get_widgets('primary-sidebar');
-$templates = array( 'home.twig' );
+$templates = array( 'archive.twig' );
 
 Timber::render( $templates, $context );
