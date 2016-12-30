@@ -59,6 +59,7 @@ require_once( PARENT_THEME_DIR . 'lib/css/load-styles.php' );
 // Front End
 require_once( PARENT_THEME_DIR . 'includes/tha-theme-hooks.php' );
 require_once( PARENT_THEME_DIR . 'includes/attributes.php' );
+require_once( PARENT_THEME_DIR . 'lib/woo/woo-functions.php' );
 
 /**
  * Initialize and set up Timber views location
@@ -79,6 +80,7 @@ class ObjectivSite extends TimberSite {
         add_theme_support( 'menus' );
         add_theme_support( 'post_thumbnails' );
         add_action( 'wp_enqueue_scripts', array( $this, 'obj_enqueue_scripts' ) );
+        add_action( 'after_setup_theme', array( $this, 'obj_woocommerce_support' ) );
         add_action( 'widgets_init', array( $this, 'obj_widgets_init' ) );
         add_filter( 'timber_context', array( $this, 'obj_add_to_context' ) );
         add_filter( 'get_twig', array( $this, 'obj_add_to_twig' ) );
@@ -136,6 +138,10 @@ class ObjectivSite extends TimberSite {
      */
     function obj_add_to_twig( $twig ) {
         return $twig;
+    }
+
+    function obj_woocommerce_support() {
+        add_theme_support( 'woocommerce' );
     }
 }
 

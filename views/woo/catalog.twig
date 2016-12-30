@@ -1,0 +1,24 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+    <div class="wrap">
+        {% do action('woocommerce_before_main_content') %}
+
+        <div class="before-shop-loop">
+            {% do action( 'woocommerce_before_shop_loop') %}
+        </div>
+
+        <div class="loop">
+            {% for post in products %}
+
+                {% include ["components/woo/tease-product.twig"] %}
+
+            {% endfor %}
+        </div>
+
+        {% do action('woocommerce_after_shop_loop') %}
+        {% do action('woocommerce_after_main_content') %}
+    </div>
+
+{% endblock  %}
