@@ -5,15 +5,13 @@
     <div class="wrap">
         {% do action('woocommerce_before_main_content') %}
 
-        <div class="before-shop-loop">
+        <div class="product-filters">
             {% do action( 'woocommerce_before_shop_loop') %}
         </div>
 
-        <div class="loop">
+        <div class="products">
             {% for post in products %}
-
                 {% include ["components/woo/tease-product.twig"] %}
-
             {% endfor %}
         </div>
 
