@@ -44,3 +44,10 @@ $form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $l
 // Animations
 $base-duration: 150ms;
 $base-timing: ease;
+
+// Navigation
+$subnav-bg-color: #fff;
+$subnav-link-color: $base-font-color;
+$subnav-font-size: em(14);
+$subnav-bg-color-hover: $light-gray;
+$subnav-link-color-hover: $action-color;

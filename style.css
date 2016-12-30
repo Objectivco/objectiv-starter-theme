@@ -455,6 +455,7 @@ body {
     padding: 0;
     list-style-type: none; }
     .nav ul > li {
+      display: inline-block;
       list-style-type: none; }
   .nav .menu-item {
     display: inline-block;
@@ -472,6 +473,39 @@ body {
     .nav .menu-item .menu-item a:hover,
     .nav .menu-item .menu-item a:focus {
       color: #1565c0; }
+  .nav ul ul {
+    left: -9999px;
+    opacity: 0;
+    position: absolute;
+    width: 200px;
+    z-index: 100; }
+    .nav ul ul a {
+      background-color: #fff;
+      color: #333;
+      font-size: 0.875em;
+      padding: 20px;
+      position: relative;
+      width: 200px; }
+      .nav ul ul a:hover, .nav ul ul a:focus {
+        background-color: #eee;
+        color: #1565c0; }
+    .nav ul ul .current-menu-item > a,
+    .nav ul ul .current-menu-ancestor > a,
+    .nav ul ul .current-menu-parent > a {
+      color: #1565c0; }
+      .nav ul ul .current-menu-item > a:hover, .nav ul ul .current-menu-item > a:focus,
+      .nav ul ul .current-menu-ancestor > a:hover,
+      .nav ul ul .current-menu-ancestor > a:focus,
+      .nav ul ul .current-menu-parent > a:hover,
+      .nav ul ul .current-menu-parent > a:focus {
+        color: #1565c0; }
+    .nav ul ul .sub-menu {
+      margin: -54px 0 0 200px; }
+  .nav .menu-item:hover > ul,
+  .nav .menu-item-hover > ul,
+  .nav .menu-item:focus > ul {
+    left: auto;
+    opacity: 1; }
 
 .nav-toggle {
   -webkit-transform: rotate(0deg);
@@ -601,6 +635,7 @@ body {
     list-style-type: none; }
     .sidebar ul > li,
     .sidebar ol > li {
+      display: inline-block;
       list-style-type: none; }
   .sidebar li > a {
     -webkit-transition: color 150ms ease;
@@ -677,9 +712,12 @@ body {
   .pagination ul.pages {
     margin: 0;
     padding: 0;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     text-align: center;
     width: 80%; }
-    .pagination ul.pages li {
+    .pagination ul.pages > li {
       display: inline-block;
       list-style-type: none; }
 
