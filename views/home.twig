@@ -9,11 +9,7 @@
 				{% include "components/post.twig" %}
 			{% endfor %}
 		</main>
-		<aside class="sidebar sidebar-primary" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="http://schema.org/WPSidebar">
-			<ul>
-				{{primary_sidebar}}
-			</ul>
-		</aside>
+		{% include "components/sidebar.twig" %}
 		{{function('tha_content_bottom')}}
 	</div>
 	{{function('tha_content_after')}}
