@@ -1,3 +1,19 @@
-.widget_search .searchform {
-    
+.searchform {
+    display: block;
+    position: relative;
+
+    input[type="search"] {
+
+    }
+
+    input[type="submit"] {
+        background: $dark-gray;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        bottom: 0;
+        padding: 0 2em;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
 }

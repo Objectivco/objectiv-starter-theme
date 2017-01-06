@@ -27,13 +27,13 @@ textarea {
 
 #{$all-text-inputs} {
     appearance: none;
-    background-color: $base-background-color;
+    background-color: $light-gray;
     border: $base-border;
     border-radius: $base-border-radius;
     box-shadow: $form-box-shadow;
     box-sizing: border-box;
     margin-bottom: $small-spacing;
-    padding: $base-spacing / 3;
+    padding: 0.625em;
     transition: border-color $base-duration $base-timing;
     width: 100%;
 

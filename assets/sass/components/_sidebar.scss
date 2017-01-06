@@ -4,6 +4,10 @@
     ul,
     ol {
         @include inline-li;
+
+        li {
+            display: block;
+        }
     }
 
     li > a {
