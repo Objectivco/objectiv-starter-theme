@@ -11,7 +11,7 @@
 
     $.fn.objectivMobileMenu = function(options) {
         var body = $('body');
-        var menuButton = $('.nav-primary-toggle');
+        var menuButton = $('.Nav-toggle');
         var menu = $(this);
 
         // Check to make sure we have a menu
@@ -25,7 +25,7 @@
          * @since 1.0
          */
         function menuIsOpen() {
-            if (body.hasClass('nav-is-open')) {
+            if (body.hasClass('is-open')) {
                 return true;
             }
             return false;
@@ -37,8 +37,8 @@
          * @since 1.0
          */
         function toggleClasses() {
-            menuButton.toggleClass('nav-is-open');
-            menu.toggleClass('nav-is-open');
+            menuButton.toggleClass('is-open');
+            menu.toggleClass('is-open');
         }
 
         /**
@@ -70,9 +70,10 @@
          */
         function toggleMenu(e) {
             e.preventDefault();
+            console.log('click');
             openMenu();
             closeMenu();
-            body.toggleClass('nav-is-open');
+            body.toggleClass('is-open');
         }
 
         /**

@@ -3,7 +3,7 @@ body {
     position: relative;
     transition: left 0.5s $base-timing;
 
-    &.nav-is-open {
+    &.is-open {
         left: -260px;
         overflow-y: hidden;
     }

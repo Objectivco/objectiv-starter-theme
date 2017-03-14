@@ -1,4 +1,4 @@
-.nav {
+.Nav {
     clear: both;
     text-align: right;
     width: 100%;
@@ -20,15 +20,17 @@
             display: block;
             padding: em(25) em(15);
 
+            @include transition(all $base-duration $base-timing);
+
+            &:hover,
+            &:focus {
+                color: $action-color;
+            }
+
             @include media($large-screen-up) {
                 padding-left: em(20);
                 padding-right: em(20);
             }
-        }
-
-        .menu-item a:hover,
-        .menu-item a:focus {
-            color: $action-color;
         }
     }
 
@@ -78,7 +80,7 @@
 	}
 }
 
-.nav-toggle {
+.Nav-toggle {
     @include transform(rotate(0deg));
     @include transition(all 0.5s ease-in-out);
     width: 20px;
@@ -117,26 +119,26 @@
         }
     }
 
-    &.nav-is-open span:nth-child(1) {
+    &.is-open span:nth-child(1) {
         opacity: 0;
     }
 
-    &.nav-is-open span:nth-child(2) {
+    &.is-open span:nth-child(2) {
         @include transform(rotate(45deg));
     }
 
-    &.nav-is-open span:nth-child(3) {
+    &.is-open span:nth-child(3) {
         @include transform(rotate(-45deg));
     }
 
-    &.nav-is-open span:nth-child(4) {
+    &.is-open span:nth-child(4) {
         top: 18px;
         width: 0%;
         left: 50%;
     }
 }
 
-.nav-primary {
+.Nav--primary {
     @include transition(right 0.5s $base-timing);
     background: $dark-gray;
     overflow-x: hidden;
@@ -155,7 +157,7 @@
         width: auto;
     }
 
-    &.nav-is-open {
+    &.is-open {
         right: 0;
     }
 

@@ -1,14 +1,14 @@
-<header class="site-header" itemscope itemtype="http://schema.org/WPHeader">
+<header class="SiteHeader" itemscope itemtype="http://schema.org/WPHeader">
     {{function('tha_header_top')}}
     {% block header %}
-        <div class="wrap">
-            <h1 class="logo" role="banner">
-                <a class="logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+        <div class="wrap u-alignMiddle">
+            <h1 class="Logo" role="banner">
+                <a class="Logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
             </h1>
-            <nav class="nav nav-primary" itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement" role="navigation">
+            <nav class="Nav Nav--primary" itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement" role="navigation">
                 {% include "menu.twig" with {'menu': menu.get_items} %}
             </nav><!-- #nav -->
-            <div class="nav-toggle nav-primary-toggle">
+            <div class="Nav-toggle">
                 <span></span>
                 <span></span>
                 <span></span>

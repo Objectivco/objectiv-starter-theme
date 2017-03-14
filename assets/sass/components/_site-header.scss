@@ -1,4 +1,4 @@
-.site-header {
+.SiteHeader {
     color: $base-font-color;
     padding: $small-spacing 0;
     position: relative;
@@ -6,14 +6,9 @@
     @include media($medium-screen-up) {
         padding: $base-spacing 0;
     }
-
-    .wrap {
-        @include align-items(center);
-        @include display(flex);
-    }
 }
 
-.logo {
+.Logo {
     margin-bottom: 0;
 
     > a {

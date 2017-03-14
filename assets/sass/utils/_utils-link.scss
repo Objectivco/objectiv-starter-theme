@@ -1,0 +1,47 @@
+/**
+ * Clean link
+ *
+ * Link without text decoration
+ */
+.u-linkClean,
+.u-linkClean:hover,
+.u-linkClean:focus,
+.u-linkClean:active {
+    text-decoration: none;
+}
+
+/**
+ * Complex link
+ *
+ * Link to target a specific content with underline
+ *
+ * Example HTML:
+ *
+ * <a class="u-linkComplex" href="#">
+ *     Link Complex
+ *     <span class="u-linkComplexTarget">target</span>
+ * </a>
+ */
+.u-linkComplex,
+.u-linkComplex:hover,
+.u-linkComplex:focus,
+.u-linkComplex:active {
+    text-decoration: none;
+
+    .u-linkComplexTarget {
+        text-decoration: underline !important;
+    }
+}
+
+/**
+ * Block link
+ *
+ * Display links in block
+ */
+.u-linkBlock,
+.u-linkBlock:hover,
+.u-linkBlock:focus,
+.u-linkBlock:active {
+    display: block;
+    text-decoration: none;
+}

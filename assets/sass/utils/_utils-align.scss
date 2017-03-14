@@ -1,0 +1,26 @@
+/**
+ * Aligns
+ * Utilizes Flexbox to handle the alignments.
+ * Should be placed on the parent element
+ *
+ * @since 1.0
+ */
+ .u-alignBaseline {
+     align-items: baseline;
+     display: flex;
+ }
+
+ .u-alignBottom {
+    align-items: flex-end;
+    display: flex;
+ }
+
+ .u-alignTop {
+     align-items: flex-start;
+     display: flex;
+ }
+
+ .u-alignMiddle {
+     align-items: center;
+     display: flex;
+ }
