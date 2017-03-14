@@ -84,6 +84,7 @@ class ObjectivSite extends TimberSite {
         add_action( 'widgets_init', array( $this, 'obj_widgets_init' ) );
         add_filter( 'timber_context', array( $this, 'obj_add_to_context' ) );
         add_filter( 'get_twig', array( $this, 'obj_add_to_twig' ) );
+        add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
         parent::__construct();
     }
 
@@ -140,6 +141,11 @@ class ObjectivSite extends TimberSite {
         return $twig;
     }
 
+    /**
+     * Add theme support for WooCommerce
+     * 
+     * @since 1.0
+     */
     function obj_woocommerce_support() {
         add_theme_support( 'woocommerce' );
     }

@@ -3,6 +3,22 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    margin-top: 0;
+
+    @include media($large-screen-up) {
+        margin-top: 32px;
+    }
+}
+
+#wpadminbar {
+    display: none;
+
+    @include media($large-screen-up) {
+        display: block;
+    }
+}
+
 .site-header,
 .site-container,
 .site-inner,
