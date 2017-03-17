@@ -51,9 +51,10 @@ define( 'PARENT_THEME_LIB_DIR', trailingslashit( PARENT_THEME_DIR . 'lib' ) );
 require_once( PARENT_THEME_DIR . 'vendor/autoload.php' );
 
 // Admin
-require_once( PARENT_THEME_DIR . 'lib/classes/admin.php' );
-require_once( PARENT_THEME_DIR . 'lib/admin/settings.php' );
-require_once( PARENT_THEME_DIR . 'lib/admin/menu.php' );
+require_once( PARENT_THEME_DIR . 'lib/classes/Objectiv.php' );
+require_once( PARENT_THEME_DIR . 'lib/classes/Admin.php' );
+require_once( PARENT_THEME_DIR . 'lib/classes/Settings.php' );
+require_once( PARENT_THEME_DIR . 'lib/classes/ACF.php' );
 require_once( PARENT_THEME_DIR . 'lib/css/load-styles.php' );
 
 // Front End
@@ -68,6 +69,13 @@ require_once( PARENT_THEME_DIR . 'lib/woo/woo-functions.php' );
  */
 $timber = new \Timber\Timber();
 Timber::$dirname = array( 'views' );
+
+/**
+ * Initialize and set up Objectiv Class
+ * 
+ * @since 1.0.0
+ */
+$objectiv = new \Objectiv\Objectiv();
 
 /**
  * Set up Timber's Site Object

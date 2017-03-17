@@ -8,7 +8,9 @@
  * @link    http://objectiv.co
  */
 
-class ObjectivSettings extends ObjectivAdmin {
+namespace Objectiv;
+
+class Settings extends \Objectiv\Admin {
 
     function __construct() {
 

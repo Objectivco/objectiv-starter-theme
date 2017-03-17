@@ -8,7 +8,10 @@
  * @link http://objectiv.co
  * @since 1.0
  */
-abstract class ObjectivAdmin {
+
+namespace Objectiv;
+
+abstract class Admin {
 
     /**
      * Page hook for when menu is registered

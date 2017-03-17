@@ -20,5 +20,4 @@ if ( is_home() ) {
     $context['post'] = Timber::get_post();
     array_unshift( $templates, 'front-page.twig' );
 }
-
 Timber::render( $templates, $context );
