@@ -13,6 +13,4 @@ $context = Timber::get_context();
 $post = Timber::query_post();
 $context['page'] = $post;
 
-var_dump($context);
-
 Timber::render( array( 'page.twig' ), $context );

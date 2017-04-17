@@ -33,7 +33,7 @@ define( 'PARENT_THEME_URI', trailingslashit( get_template_directory_uri() ) );
  * @since 1.0.0
  * @uses tralingslashit()
  */
-define( 'PARENT_THEME_ADMIN_IMAGES_DIR', trailingslashit( PARENT_THEME_URI . 'lib/admin/images' ) );
+define( 'PARENT_THEME_ADMIN_IMAGES_DIR', trailingslashit( PARENT_THEME_URI . 'admin_assets/images/admin' ) );
 
 /**
  * Themes LIB URL
@@ -49,9 +49,6 @@ define( 'PARENT_THEME_LIB_DIR', trailingslashit( PARENT_THEME_DIR . 'lib' ) );
  * @since 1.0.0
  */
 require_once( PARENT_THEME_DIR . 'vendor/autoload.php' );
-
-// Admin
-require_once( PARENT_THEME_DIR . 'lib/css/load-styles.php' );
 
 // Front End
 require_once( PARENT_THEME_DIR . 'includes/tha-theme-hooks.php' );
@@ -74,18 +71,33 @@ Timber::$dirname = array( 'views' );
 class ObjectivSite extends TimberSite {
 
     function __construct() {
+
+        // Set up the arrays for the page settings
         $config = new Objectiv\Config( PARENT_THEME_DIR . 'includes/config/settings-page.php' );
         $settings_page = new Objectiv\Settings( $config );
 
-        add_theme_support( 'menus' );
-        add_theme_support( 'post_thumbnails' );
-        add_action( 'wp_enqueue_scripts', array( $this, 'obj_enqueue_scripts' ) );
-        add_action( 'after_setup_theme', array( $this, 'obj_woocommerce_support' ) );
-        add_action( 'widgets_init', array( $this, 'obj_widgets_init' ) );
-        add_filter( 'timber_context', array( $this, 'obj_add_to_context' ) );
-        add_filter( 'get_twig', array( $this, 'obj_add_to_twig' ) );
-        add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
+        // Register Settings
         add_action( 'init', array( $settings_page, 'register' ) );
+        // Add admin body class
+        add_filter( 'admin_body_class', array( $this, 'obj_admin_body_class' ) );
+        // Enqueue admin assets
+        add_action( 'admin_enqueue_scripts', array( $this, 'obj_admin_assets' ) );
+
+        // Add theme support for menus
+        add_theme_support( 'menus' );
+        // Add theme support for post_thumbnails
+        add_theme_support( 'post_thumbnails' );
+        // Enqueue front-end scripts
+        add_action( 'wp_enqueue_scripts', array( $this, 'obj_enqueue_scripts' ) );
+        // Add WooCommerce support
+        add_action( 'after_setup_theme', array( $this, 'obj_woocommerce_support' ) );
+        // Initialize Objectiv Widgets
+        add_action( 'widgets_init', array( $this, 'obj_widgets_init' ) );
+        // Add to Timber Context
+        add_filter( 'timber_context', array( $this, 'obj_add_to_context' ) );
+        // Functions to add to Twig
+        add_filter( 'get_twig', array( $this, 'obj_add_to_twig' ) );
+        
         parent::__construct();
     }
 
@@ -104,8 +116,40 @@ class ObjectivSite extends TimberSite {
             PARENT_THEME_VERSION,
             true
         );
-
     }
+
+    /**
+     * Admin Body Class
+     * 
+     * @param  array $classes
+     * 
+     * @since 1.0
+     */
+    function obj_admin_body_class( $classes ) {
+        $screen = get_current_screen();
+
+        if ( 'toplevel_page_objectiv' == $screen->base )
+            $classes .= ' ' . 'obj-admin';
+        return $classes;
+    }
+
+    /**
+     * Load Admin Assets
+     * 
+     * @since 1.0
+     */
+    function obj_admin_assets() {
+        if ( is_admin() ) {
+            wp_enqueue_style( 
+                'obj_admin_css', 
+                PARENT_THEME_URI . 
+                'admin_assets/sass/admin.css', 
+                array(), 
+                PARENT_THEME_VERSION 
+            );
+        }
+    }
+
 
     /**
      * Register Sidebars
