@@ -51,10 +51,6 @@ define( 'PARENT_THEME_LIB_DIR', trailingslashit( PARENT_THEME_DIR . 'lib' ) );
 require_once( PARENT_THEME_DIR . 'vendor/autoload.php' );
 
 // Admin
-require_once( PARENT_THEME_DIR . 'lib/classes/Objectiv.php' );
-require_once( PARENT_THEME_DIR . 'lib/classes/Admin.php' );
-require_once( PARENT_THEME_DIR . 'lib/classes/Settings.php' );
-require_once( PARENT_THEME_DIR . 'lib/classes/ACF.php' );
 require_once( PARENT_THEME_DIR . 'lib/css/load-styles.php' );
 
 // Front End
@@ -71,13 +67,6 @@ $timber = new \Timber\Timber();
 Timber::$dirname = array( 'views' );
 
 /**
- * Initialize and set up Objectiv Class
- * 
- * @since 1.0.0
- */
-$objectiv = new \Objectiv\Objectiv();
-
-/**
  * Set up Timber's Site Object
  *
  * @since 1.0
@@ -85,6 +74,9 @@ $objectiv = new \Objectiv\Objectiv();
 class ObjectivSite extends TimberSite {
 
     function __construct() {
+        $config = new Objectiv\Config( PARENT_THEME_DIR . 'includes/config/settings-page.php' );
+        $settings_page = new Objectiv\Settings( $config );
+
         add_theme_support( 'menus' );
         add_theme_support( 'post_thumbnails' );
         add_action( 'wp_enqueue_scripts', array( $this, 'obj_enqueue_scripts' ) );
@@ -93,6 +85,7 @@ class ObjectivSite extends TimberSite {
         add_filter( 'timber_context', array( $this, 'obj_add_to_context' ) );
         add_filter( 'get_twig', array( $this, 'obj_add_to_twig' ) );
         add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
+        add_action( 'init', array( $settings_page, 'register' ) );
         parent::__construct();
     }
 
@@ -135,6 +128,7 @@ class ObjectivSite extends TimberSite {
     function obj_add_to_context( $context ) {
         $context['site'] = $this;
         $context['menu'] = new TimberMenu( 'testing-menu' );
+        $context['seo_title'] = get_option( 'seo_title' );
         return $context;
     }
 

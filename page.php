@@ -12,6 +12,7 @@
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['page'] = $post;
-$context['sections'] = \Objectiv\Objectiv::get_flexible_sections( 'content_sections' );
+
+var_dump($context);
 
 Timber::render( array( 'page.twig' ), $context );

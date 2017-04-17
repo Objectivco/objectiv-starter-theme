@@ -1,0 +1,1 @@
+<input type='text' name='objectiv_settings[site_title]' value='<?php echo $options['site_title']; ?>' class="widefat">
