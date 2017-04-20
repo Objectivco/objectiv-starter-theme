@@ -6,6 +6,8 @@
   "author": "Objectiv",
   "license": "MIT",
   "dependencies": {
+  },
+  "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^1.2.2",
@@ -14,8 +16,5 @@
     "gulp-uglify": "^2.0.0",
     "node-bourbon": "^4.2.8",
     "node-neat": "^1.7.2"
-  },
-  "devDependencies": {
-    "gulp-suitcss": "^2.0.0"
   }
 }

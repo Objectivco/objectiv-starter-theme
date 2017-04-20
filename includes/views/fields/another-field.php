@@ -1,1 +1,0 @@
-<input type='text' name='objectiv_settings[another_field]' value='<?php echo $options['another_field']; ?>' class="widefat" >

@@ -26,13 +26,8 @@ $objectiv_settings = array(
 			'fields'	=> array(
 				'site_title'	=> array(
 					'title'	=> __( 'Site Title', 'objectiv' ),
-					'default'	=> get_bloginfo( 'name' ),
+					'default'	=> '',
 					'view'	=> PARENT_THEME_DIR . 'includes/views/fields/site-title.php'
-				),
-				'another_settings'	=> array(
-					'title'	=> __( 'Another Setting', 'objectiv' ),
-					'default'	=> __( 'Default', 'objectiv' ),
-					'view'	=> PARENT_THEME_DIR . 'includes/views/fields/another-field.php'
 				)
 			)
 		)

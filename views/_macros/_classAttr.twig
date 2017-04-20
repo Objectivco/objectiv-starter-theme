@@ -1,0 +1,5 @@
+{% macro classAttr(classes) %}
+    {%- if (classes|length) -%}
+        class="{{ classes|join(' ') }}"
+    {%- endif -%}
+{% endmacro %}

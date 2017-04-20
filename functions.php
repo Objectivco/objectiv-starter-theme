@@ -53,7 +53,7 @@ require_once( PARENT_THEME_DIR . 'vendor/autoload.php' );
 // Front End
 require_once( PARENT_THEME_DIR . 'includes/tha-theme-hooks.php' );
 require_once( PARENT_THEME_DIR . 'includes/attributes.php' );
-require_once( PARENT_THEME_DIR . 'lib/woo/woo-functions.php' );
+require_once( PARENT_THEME_DIR . 'includes/woo/woo-functions.php' );
 
 /**
  * Initialize and set up Timber views location
@@ -82,6 +82,8 @@ class ObjectivSite extends TimberSite {
         add_filter( 'admin_body_class', array( $this, 'obj_admin_body_class' ) );
         // Enqueue admin assets
         add_action( 'admin_enqueue_scripts', array( $this, 'obj_admin_assets' ) );
+        // Remove admin pages for non admin users
+        add_action( 'admin_init', array( $this, 'obj_remove_admin_menus' ) );
 
         // Add theme support for menus
         add_theme_support( 'menus' );
@@ -149,7 +151,6 @@ class ObjectivSite extends TimberSite {
             );
         }
     }
-
 
     /**
      * Register Sidebars

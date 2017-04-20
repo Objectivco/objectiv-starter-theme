@@ -1,0 +1,45 @@
+{# Create a variable width responsive image #}
+{% macro responsive(asset, options={}) %}
+    {# merge the options with options parameter #}
+    {% set options = {
+        alt: 'alt',
+        class: [],
+        style: 'default',
+    } | merge(options) %}
+
+    {# Get the asset meta data from WP #}
+    {% set assetArray = function('wp_get_attachment_image_src', asset, 'full') %}
+    {% set assetUrl = assetArray[0] %}
+    {% set assetMetaData = function('wp_get_attachment_metadata', asset) %}
+    {% set assetNativeWidth = assetmetaData.width %}
+
+    {# Image Config
+     # Make sure to update the configs to what fits for each site.
+     #}
+    {% set config = {
+        default: {
+            srcsetWidths: [400, 800, 1000],
+            sizes: [
+                '(max-width: 30rem) 100vw',
+                '25em'
+            ],
+            defaultWidth: 800
+        }
+    } %}
+
+    {# Let's get the style that is sent through as parameter #}
+    {% set params = config[options.style] %}
+
+    {# Create the srcset #}
+    {% for width in params['srcsetWidths'] %}
+        {% if width < assetNativeWidth %}
+            {% set srcset
+                = srcset|merge([asset.getUrl(transform|merge({width: width}))~' '~width~'w'])
+            %}
+        {% endif %}
+    {% endfor %}
+
+    {{function('print_r', srcset)}}
+    
+
+{% endmacro %}
