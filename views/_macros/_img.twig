@@ -1,5 +1,5 @@
 {# Create a variable width responsive image #}
-{% macro responsive(asset, options={}) %}
+{% macro responsive(assetId, options={}) %}
     {# merge the options with options parameter #}
     {% set options = {
         alt: 'alt',
@@ -8,9 +8,9 @@
     } | merge(options) %}
 
     {# Get the asset meta data from WP #}
-    {% set assetArray = function('wp_get_attachment_image_src', asset, 'full') %}
+    {% set assetArray = function('wp_get_attachment_image_src', assetId, 'full') %}
     {% set assetUrl = assetArray[0] %}
-    {% set assetMetaData = function('wp_get_attachment_metadata', asset) %}
+    {% set assetMetaData = function('wp_get_attachment_metadata', assetId) %}
     {% set assetNativeWidth = assetmetaData.width %}
 
     {# Image Config
@@ -18,28 +18,33 @@
      #}
     {% set config = {
         default: {
-            srcsetWidths: [400, 800, 1000],
+            srcsetWidths: [640, 1024, 1600],
             sizes: [
-                '(max-width: 30rem) 100vw',
-                '25em'
+                '(min-width: 36em) 640px',
+                '100vw'
             ],
-            defaultWidth: 800
+            defaultWidth: 1024
         }
     } %}
 
     {# Let's get the style that is sent through as parameter #}
     {% set params = config[options.style] %}
+    {% set srcset = [] %}
 
     {# Create the srcset #}
     {% for width in params['srcsetWidths'] %}
-        {% if width < assetNativeWidth %}
-            {% set srcset
-                = srcset|merge([asset.getUrl(transform|merge({width: width}))~' '~width~'w'])
-            %}
-        {% endif %}
+        {% set srcset = srcset|merge([assetUrl|resize(width) ~ ' ' ~ width ~ 'w']) %}
     {% endfor %}
 
-    {{function('print_r', srcset)}}
-    
+    <img 
+        {% if (assetNativeWidth <= params['defaultWidth']) %}
+            src="{{assetUrl}}"
+        {% else %}
+            src="{{assetUrl|resize(width)}}"
+        {% endif %}
+
+        srcset="{{srcset|join(', ')}}"
+        sizes="{{params['sizes']|join(', ')}}"
+    />
 
 {% endmacro %}
