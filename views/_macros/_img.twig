@@ -1,5 +1,6 @@
 {# Create a variable width responsive image #}
 {% macro responsive(assetId, options={}) %}
+    {% import '_macros/_classAttr.twig' as m_classAttr %}
     {# merge the options with options parameter #}
     {% set options = {
         alt: 'alt',
@@ -45,6 +46,10 @@
 
         srcset="{{srcset|join(', ')}}"
         sizes="{{params['sizes']|join(', ')}}"
+
+        alt="{{options.alt}}"
+        
+        {{m_classAttr.classAttr(options.class)}}
     />
 
 {% endmacro %}
