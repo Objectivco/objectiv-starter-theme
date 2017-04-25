@@ -10,6 +10,7 @@
 			<h1>{{page.title}}</h1>
 			{{page.content}}
 			{% set image = page.get_field( 'image' ) %}
+			{{m_img.fixed(image, 400)}}
 			{{m_img.responsive(image, {alt: 'an image', class: 'responsive'})}}
 		</main>
 		{{function('tha_content_bottom')}}

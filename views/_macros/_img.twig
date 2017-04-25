@@ -1,3 +1,39 @@
+{# Create a fixed width responsive image #}
+{% macro fixed(assetId, width, options={}) %}
+    {% import '_macros/_classAttr.twig' as m_classAttr %}
+    
+    {# merge the options with the options parameter #}
+    {% set options = {
+        alt: 'alt',
+        class: []
+    } | merge(options) %}
+
+    {# Get the asset meta data from WP #}
+    {% set assetArray = function('wp_get_attachment_image_src', assetId, 'full') %}
+    {% set assetUrl = assetArray[0] %}
+    {% set assetMetaData = function('wp_get_attachment_metadata', assetId) %}
+    {% set assetNativeWidth = assetMetaData.width %}
+    
+
+    <img
+        {% if (assetNativeWidth <= width) %}
+            src="{{assetUrl}}"
+        {% else %}
+            src="{{assetUrl|resize(width)}}"
+        {% endif %}
+
+        {% if (width*2 == assetNativeWidth) %}
+            srcset="{{assetUrl}} 2x"
+        {% elseif (width*2 < assetNativeWidth) %}
+            srcset="{{assetUrl|resize(width*2)}} 2x"
+        {% endif %}
+
+        alt="{{options.alt}}"
+        {{m_classAttr.classAttr(options.class)}}
+    />
+
+{% endmacro %}
+
 {# Create a variable width responsive image #}
 {% macro responsive(assetId, options={}) %}
     {% import '_macros/_classAttr.twig' as m_classAttr %}
@@ -12,7 +48,7 @@
     {% set assetArray = function('wp_get_attachment_image_src', assetId, 'full') %}
     {% set assetUrl = assetArray[0] %}
     {% set assetMetaData = function('wp_get_attachment_metadata', assetId) %}
-    {% set assetNativeWidth = assetmetaData.width %}
+    {% set assetNativeWidth = assetMetaData.width %}
 
     {# Image Config
      # Make sure to update the configs to what fits for each site.
@@ -48,7 +84,7 @@
         sizes="{{params['sizes']|join(', ')}}"
 
         alt="{{options.alt}}"
-        
+
         {{m_classAttr.classAttr(options.class)}}
     />
 
