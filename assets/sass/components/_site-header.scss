@@ -2,10 +2,6 @@
     color: $base-font-color;
     padding: $small-spacing 0;
     position: relative;
-
-    @include grid-media($tablet-landscape) {
-        padding: $base-spacing 0;
-    }
 }
 
 .Logo {

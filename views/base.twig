@@ -12,9 +12,11 @@
 				{% include('header.twig') %}
 			{{function('tha_header_after')}}
 
+			<!-- Page Banner -->
+			{% block banner %}{% endblock %}
+
 			<!-- Site Inner -->
 			<div class="site-inner">
-				{% block banner %}{% endblock %}
 				{% block layout %}
 					Sorry, no content
 				{% endblock %}

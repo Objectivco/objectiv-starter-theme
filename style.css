@@ -688,6 +688,10 @@ body.is-open {
   display: block;
 }
 
+.content-wrap {
+  padding: 40px 0;
+}
+
 .content-sidebar-wrap {
   margin: 0 auto;
   width: 90%;
@@ -719,12 +723,6 @@ body.is-open {
   color: #333;
   padding: 10px 0;
   position: relative;
-}
-
-@media only screen and (min-width: 1024px) {
-  .SiteHeader {
-    padding: 40px 0;
-  }
 }
 
 .Logo {
@@ -952,6 +950,14 @@ body.is-open {
     color: #333;
     padding: 20px 10px;
   }
+}
+
+.Banner {
+  background: #f3f3f4;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 6em 0;
 }
 
 .site-footer {

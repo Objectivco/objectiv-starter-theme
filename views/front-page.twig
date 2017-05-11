@@ -1,6 +1,11 @@
 {% extends "base.twig" %}
 
 {% block banner %}
+	{% embed '/components/banner.twig' %}
+		{% block content %}
+			<h1>{{page.title}}</h1>
+		{% endblock %}
+	{% endembed %}
 {% endblock %}
 
 {% block layout %}
@@ -17,4 +22,3 @@
 	</div>
 	{{function('tha_content_after')}}
 {% endblock %}
-
