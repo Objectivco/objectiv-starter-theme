@@ -173,7 +173,7 @@ class MenuItem extends Core implements CoreInterface {
 		}
 		$this->classes = array_merge($this->classes, $data->classes);
 		$this->classes = array_unique($this->classes);
-		$this->classes = apply_filters('nav_menu_css_class', $this->classes, $this);
+		$this->classes = apply_filters('nav_menu_css_class', $this->classes, $this, array(), 0);
 		$this->class = trim(implode(' ', $this->classes));
 	}
 
@@ -309,6 +309,24 @@ class MenuItem extends Core implements CoreInterface {
 	public function title() {
 		if ( isset($this->__title) ) {
 			return $this->__title;
+		}
+	}
+	
+	/**
+	 * Gets the post thumbnail image object
+	 * @example
+	 * ```twig
+	 * {% for item in menu.items %}
+	 *     <li><a href="{{ item.link }}"><img src="{{ item.thumbnail }}"/></a></li>
+	 * {% endfor %}
+	 * ```
+	 * @return string the public thumbnail url
+	 */
+	public function thumbnail() {
+		if ( $this->menu_object && method_exists($this->menu_object, 'thumbnail')) {
+			return $this->menu_object->thumbnail();
+		} else {
+			error_log('no master object');
 		}
 	}
 }

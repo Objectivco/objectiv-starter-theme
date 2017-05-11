@@ -2,8 +2,8 @@
 Contributors: jarednova, connorjburton, lggorman
 Tags: template engine, templates, twig
 Requires at least: 3.7
-Stable tag: 1.1.11
-Tested up to: 4.6
+Stable tag: 1.3.0
+Tested up to: 4.7.3
 PHP version: 5.3.0 or greater
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,6 +40,46 @@ Timber is great for any WordPress developer who cares about writing good, mainta
 
 
 == Changelog ==
+
+= 1.3.0 =
+* Default $context object now returns a PostQuery for $context['posts'] this is cool because you can use `{{ posts.pagination }}` in your Twig templates without any further PHP work (thanks @lggorman)
+* Timber\Images with PDFs and other content types now return the file instead of null # (thanks @hoandang)
+* Timber\Comments now support different comment types #1364 (thanks @yantei)
+* Timber\Comments {{ comment.content }} now returns processed comment with `<p>` tags
+* Fix for HTTP error when uploading media files in Windows #1346 (thanks Matias Griese)
+* Fix for image resizing on alternative WP setups (thanks @gillesgoetsch)
+* Exposing a function to global Twig scope through Timber\FunctionWrapper is deprecated, the prefered method to do this is through a Twig template like `{{ function('my_cool_function', 'my_argument') }}` (thanks @gchtr)
+* Fixed issues with use of Twig 2.0 (#1370)
+* Fixed up some things with Timber/Archives and getting post_count #1376
+* Don't let Timber fail when converting TIFFs or other weird file types, instead return the passed value w/o modifying #1383
+* Updated `FunctionWrapper` with appropriate warnings and Twig 2.0 compat (thank you thank you @gchtr)
+Misc fixes to documentation
+
+= 1.2.4 =
+* Fixed regression from S3 handling #1330 (@gchtr)
+
+= 1.2.3 =
+* Fixed a potential XSS security issue
+* Fixed handling of images stored on S3
+
+= 1.2.2 =
+* A bunch of fixes to how images in themes are handled #1317 #1293 (@jarednova)
+* Fixed filter for avatar images in comments #1310 (@xavivars)
+* Upgrades to PHPUnit and testing suite (@jarednova)
+
+= 1.2.1 =
+* Cleaned-up theme handling #1281 (thanks @xavivars)
+* Refactor of Pagination #1284 (thanks again @xavivars)
+* Fixed an error in Admin #1285 (thanks @alexanderanberg)
+* Fixed an issue with User->id #1283 (thanks @drumba)
+
+= 1.2.0 =
+* Fixed issues with WordPress 4.7
+* Introduced Timber\CommentThread object
+
+= 1.1.12 =
+* Fixed Twig issue with deprecation #1265 (thanks @codesman)!
+* Cleaned-up the warnings for WP.org users and disabled easy updates for major/milestone versions 331314d9aaf90a52ff1c5a213656b8c02a27c60e
 
 = 1.1.11 =
 * Improved flexibility for public query_vars #1250 (thanks @xavivars)

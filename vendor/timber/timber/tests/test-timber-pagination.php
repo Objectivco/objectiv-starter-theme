@@ -7,7 +7,7 @@ class TestTimberPagination extends Timber_UnitTestCase {
 		$posts = $this->factory->post->create_many( 55 );
 		$this->go_to( home_url( '?s=post' ) );
 		$pagination = Timber::get_pagination();
-		$this->assertEquals( user_trailingslashit(home_url().'/?s=post&#038;paged=5'), $pagination['pages'][4]['link'] );
+		$this->assertEquals( user_trailingslashit(home_url().'/?paged=5&s=post'), $pagination['pages'][4]['link'] );
 	}
 
 	/* This test is for the concept of linking query_posts and get_pagination
@@ -48,6 +48,16 @@ class TestTimberPagination extends Timber_UnitTestCase {
 		query_posts('post_type=portfolio&paged=3');
 		$pagination = Timber::get_pagination();
 		$this->assertEquals(6, count($pagination['pages']));
+	}
+
+	function testSanitizeNextPagination() {
+		$this->setPermalinkStructure('/%postname%/');
+		register_post_type( 'portfolio' );
+		$pids = $this->factory->post->create_many( 55, array( 'post_type' => 'portfolio' ) );
+		$this->go_to( home_url( '/portfolio/page/3?whscheck="><svg/onload=alert()>' ) );
+		query_posts('post_type=portfolio&paged=3');
+		$pagination = Timber::get_pagination();
+		$this->assertEquals('http://example.org/portfolio/page/4/?whscheck=%22%3E%3Csvg%2Fonload%3Dalert%28%29%3E', $pagination['next']['link']);
 	}
 
 	function testPaginationWithSize() {
@@ -135,8 +145,8 @@ class TestTimberPagination extends Timber_UnitTestCase {
 		$this->setPermalinkStructure( $struc );
 		$posts = $this->factory->post->create_many( 55 );
 		$this->go_to( home_url( '/' ) );
-		$pagination = Timber::get_pagination( array( 'base' => '/apricot/%_%', 'format' => 'page=%#%' ) );
-		$this->assertEquals( '/apricot/page=2', $pagination['next']['link'] );
+		$pagination = Timber::get_pagination( array( 'base' => '/apricot/%_%', 'format' => '?pagination=%#%' ) );
+		$this->assertEquals( '/apricot/?pagination=2', $pagination['next']['link'] );
 	}
 
 	function testPaginationPrevUsesBaseAndFormatArgs( $struc = '/%postname%/' ) {
@@ -145,8 +155,8 @@ class TestTimberPagination extends Timber_UnitTestCase {
 		$this->go_to( home_url( '/apricot/page=3' ) );
 		query_posts('paged=3');
 		$GLOBALS['paged'] = 3;
-		$pagination = Timber::get_pagination( array( 'base' => '/apricot/%_%', 'format' => 'page=%#%' ) );
-		$this->assertEquals( '/apricot/page=2', $pagination['prev']['link'] );
+		$pagination = Timber::get_pagination( array( 'base' => '/apricot/%_%', 'format' => 'pagination/%#%' ) );
+		$this->assertEquals( '/apricot/pagination/2/', $pagination['prev']['link'] );
 	}
 
 	function testPaginationWithMoreThan10Pages( $struc = '/%postname%/' ) {
@@ -173,7 +183,7 @@ class TestTimberPagination extends Timber_UnitTestCase {
 		$this->go_to( home_url( '?s=post' ) );
 		$posts = new Timber\PostQuery();
 		$pagination = $posts->pagination();
-		$this->assertEquals( user_trailingslashit(home_url().'/?s=post&#038;paged=5'), $pagination->pages[4]['link'] );
+		$this->assertEquals( home_url().'/?paged=5&s=post', $pagination->pages[4]['link'] );
 	}
 
 	function testCollectionPaginationOnLaterPage() {
@@ -254,8 +264,8 @@ class TestTimberPagination extends Timber_UnitTestCase {
 		$posts = $this->factory->post->create_many( 55 );
 		$this->go_to( home_url( '/' ) );
 		$posts = new Timber\PostQuery();
-		$pagination = $posts->pagination( array( 'base' => '/apricot/%_%', 'format' => 'page=%#%' ) );
-		$this->assertEquals( '/apricot/page=2', $pagination->next['link'] );
+		$pagination = $posts->pagination( array( 'base' => '/apricot/%_%', 'format' => 'page/%#%' ) );
+		$this->assertEquals( '/apricot/page/2/', $pagination->next['link'] );
 	}
 
 	function testCollectionPaginationPrevUsesBaseAndFormatArgs( $struc = '/%postname%/' ) {
@@ -265,8 +275,19 @@ class TestTimberPagination extends Timber_UnitTestCase {
 			$this->factory->post->create(array('post_title' => 'post'.$i, 'post_date' => '2014-02-'.$i));
 		}
 		$posts = new Timber\PostQuery('paged=3');
-		$pagination = $posts->pagination( array( 'base' => '/apricot/%_%', 'format' => 'page=%#%' ) );
-		$this->assertEquals( '/apricot/page=2', $pagination->prev['link'] );
+		$pagination = $posts->pagination( array( 'base' => '/apricot/%_%', 'format' => '?pagination=%#%' ) );
+		$this->assertEquals( '/apricot/?pagination=2', $pagination->prev['link'] );
+	}
+
+	function testCollectionPaginationPrevUsesBaseAndFormatArgsPage( $struc = '/%postname%/' ) {
+		$this->setPermalinkStructure( $struc );
+		//$posts = $this->factory->post->create_many( 55 );
+		for($i=0; $i<30; $i++) {
+			$this->factory->post->create(array('post_title' => 'post'.$i, 'post_date' => '2014-02-'.$i));
+		}
+		$posts = new Timber\PostQuery('paged=3');
+		$pagination = $posts->pagination( array( 'base' => '/apricot/%_%', 'format' => '?page=%#%' ) );
+		$this->assertEquals( '/apricot/?page=2', $pagination->prev['link'] );
 	}
 
 	function testCollectionPaginationWithMoreThan10Pages( $struc = '/%postname%/' ) {
@@ -290,5 +311,7 @@ class TestTimberPagination extends Timber_UnitTestCase {
 		$pagination = $posts->pagination();
 		$this->assertEquals( 2, count( $pagination->pages ) );
 	}
+
+
 
 }

@@ -3,7 +3,7 @@
 /*
  * This file is part of Twig.
  *
- * (c) 2010 Fabien Potencier
+ * (c) Fabien Potencier
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,7 +24,7 @@ interface Twig_TokenParserInterface
     /**
      * Parses a token and returns a node.
      *
-     * @return Twig_NodeInterface
+     * @return Twig_Node A Twig_Node instance
      *
      * @throws Twig_Error_Syntax
      */

@@ -6,10 +6,18 @@ namespace Composer\Autoload;
 
 class ComposerStaticInite931e5ad97dac2531d444a75be2c6d0c
 {
+    public static $files = array (
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
             'Timber\\' => 7,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
         ),
         'P' => 
         array (
@@ -29,6 +37,10 @@ class ComposerStaticInite931e5ad97dac2531d444a75be2c6d0c
         'Timber\\' => 
         array (
             0 => __DIR__ . '/..' . '/timber/timber/lib',
+        ),
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
         'PhilippBaschke\\ACFProInstaller\\' => 
         array (

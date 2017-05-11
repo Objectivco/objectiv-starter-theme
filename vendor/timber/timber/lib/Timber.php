@@ -35,7 +35,7 @@ use Timber\Loader;
  */
 class Timber {
 
-	public static $version = '1.1.11';
+	public static $version = '1.2.4';
 	public static $locations;
 	public static $dirname = 'views';
 	public static $twig_cache = false;
@@ -72,7 +72,7 @@ class Timber {
 		if ( version_compare(phpversion(), '5.3.0', '<') && !is_admin() ) {
 			trigger_error('Timber requires PHP 5.3.0 or greater. You have '.phpversion(), E_USER_ERROR);
 		}
-		if ( !class_exists('Twig_Autoloader') ) {
+		if ( !class_exists('Twig_Token') ) {
 			trigger_error('You have not run "composer install" to download required dependencies for Timber, you can read more on https://github.com/timber/timber#installation', E_USER_ERROR);
 		}
 	}
@@ -230,8 +230,6 @@ class Timber {
 		if ( empty(self::$context_cache) ) {
 			self::$context_cache['http_host'] = URLHelper::get_scheme().'://'.URLHelper::get_host();
 			self::$context_cache['wp_title'] = Helper::get_wp_title();
-			self::$context_cache['wp_head'] = Helper::function_wrapper('wp_head');
-			self::$context_cache['wp_footer'] = Helper::function_wrapper('wp_footer');
 			self::$context_cache['body_class'] = implode(' ', get_body_class());
 
 			self::$context_cache['site'] = new Site();
@@ -240,10 +238,15 @@ class Timber {
 			self::$context_cache['user'] = ($user->ID) ? $user : false;
 			self::$context_cache['theme'] = self::$context_cache['site']->theme;
 
-			//Not yet! but this will soon be the default...
-			//self::$context_cache['posts'] = new PostQuery();
-			self::$context_cache['posts'] = Timber::query_posts();
-			
+			self::$context_cache['posts'] = new PostQuery();
+
+			/**
+			 * @deprecated as of Timber 1.3.0
+			 * @todo remove in Timber 1.4.*
+			 */
+			self::$context_cache['wp_head'] = new FunctionWrapper( 'wp_head' );
+			self::$context_cache['wp_footer'] = new FunctionWrapper( 'wp_footer' );
+
 			self::$context_cache = apply_filters('timber_context', self::$context_cache);
 			self::$context_cache = apply_filters('timber/context', self::$context_cache);
 		}
@@ -321,7 +324,7 @@ class Timber {
 	/**
 	 * Render function.
 	 * @api
-	 * @param array   $filenames
+	 * @param array|string   $filenames
 	 * @param array   $data
 	 * @param boolean|integer    $expires
 	 * @param string  $cache_mode
@@ -396,12 +399,15 @@ class Timber {
 
 	/**
 	 * Get widgets.
+	 *
 	 * @api
-	 * @param int     $widget_id
-	 * @return TimberFunctionWrapper
+	 * @param int|string $widget_id Optional. Index, name or ID of dynamic sidebar. Default 1.
+	 * @return FunctionWrapper
 	 */
 	public static function get_widgets( $widget_id ) {
-		return trim(Helper::function_wrapper('dynamic_sidebar', array($widget_id), true));
+		$output = new FunctionWrapper( 'dynamic_sidebar', array( $widget_id ), true );
+
+		return trim( $output );
 	}
 
 	/*  Pagination

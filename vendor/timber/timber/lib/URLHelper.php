@@ -24,9 +24,8 @@ class URLHelper {
      * Get url scheme
      * @return string
      */
-	public static function get_scheme()
-    {
-        return isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+	public static function get_scheme() {
+		return isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
     }
 
 
@@ -96,10 +95,10 @@ class URLHelper {
 	 * @return string the HTTP_HOST or SERVER_NAME
 	 */
 	public static function get_host() {
-		if ( isset($_SERVER['HTTP_HOST']) ) {
+		if ( isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST'] ) {
 			return $_SERVER['HTTP_HOST'];
 		}
-		if ( isset($_SERVER['SERVER_NAME']) ) {
+		if ( isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME']) {
 			return $_SERVER['SERVER_NAME'];
 		}
 		return '';
@@ -194,12 +193,15 @@ class URLHelper {
 	public static function prepend_to_url( $url, $path ) {
 		if ( strstr(strtolower($url), 'http') ) {
 			$url_parts = parse_url($url);
-			$url = $url_parts['scheme'].'://'.$url_parts['host'].$path.$url_parts['path'];
+			$url = $url_parts['scheme'].'://'.$url_parts['host'].$path;
+			if ( isset($url_parts['path']) ) {
+				$url .= $url_parts['path'];
+			}
 			if ( isset($url_parts['query']) ) {
-				$url .= $url_parts['query'];
+				$url .= '?'.$url_parts['query'];
 			}
 			if ( isset($url_parts['fragment']) ) {
-				$url .= $url_parts['fragment'];
+				$url .= '#'.$url_parts['fragment'];
 			}
 		} else {
 			$url = $url.$path;
@@ -218,6 +220,16 @@ class URLHelper {
 			$path = '/'.$path;
 		}
 		return $path;
+	}
+
+	/**
+	 *
+	 *
+	 * @param string  $path
+	 * @return string
+	 */
+	public static function unpreslashit( $path ) {
+		return ltrim($path, '/');
 	}
 
 	/**
@@ -287,6 +299,29 @@ class URLHelper {
 	public static function remove_trailing_slash( $link ) {
 		if ( $link != "/" ) {
 			$link = untrailingslashit($link);
+		}
+		return $link;
+	}
+
+	/**
+	 * Pass links through user_trailingslashit handling query strings properly
+	 *
+	 * @param string $link
+	 * @return string
+	 * */
+	public static function user_trailingslashit( $link ) {
+		$link_parts = parse_url($link);
+
+		if ( !$link_parts ) {
+			return $link;
+		}
+		
+		if( isset($link_parts['path']) && $link_parts['path'] != '/' ) {
+			$new_path = user_trailingslashit( $link_parts['path'] );
+			
+			if ( $new_path != $link_parts['path'] )	{
+				$link = str_replace($link_parts['path'], $new_path, $link);
+			}
 		}
 		return $link;
 	}

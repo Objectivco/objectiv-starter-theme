@@ -4,6 +4,13 @@ namespace Timber;
 
 use Timber\Helper;
 
+/**
+ * FunctionWrapper Class.
+ *
+ * With Timber, we want to prepare all the data before we echo content through a render function. Some functionality in WordPress directly echoes output instead of returning it. This class makes it easier to store the results of an echoing function by using ob_start() and ob_end_clean() behind the scenes.
+ *
+ * @package Timber
+ */
 class FunctionWrapper {
 
 	private $_class;
@@ -42,23 +49,27 @@ class FunctionWrapper {
 		$this->_args = $args;
 		$this->_use_ob = $return_output_buffer;
 
+		/**
+		 * @deprecated since 1.3.0
+		 * @todo remove in 1.4.0
+		 */
 		add_filter('timber/twig', array(&$this, 'add_to_twig'));
 	}
 
-	/**
-	 *
-	 *
-	 * @param Twig_Environment $twig
-	 * @return Twig_Environment
-	 */
+	/**		
+	 *		
+	 * @deprecated since 1.3.0
+	 * @todo remove in 1.4.0	
+	 * @param Twig_Environment $twig		
+	 * @return Twig_Environment		
+	 */		
 	public function add_to_twig( $twig ) {
-		$wrapper = $this;
-
-		$twig->addFunction(new \Twig_SimpleFunction($this->_function, function() use ($wrapper) {
-					return call_user_func_array(array($wrapper, 'call'), func_get_args());
-				} ));
-
-		return $twig;
+		$wrapper = $this;		
+		$twig->addFunction(new \Twig_SimpleFunction($this->_function, function() use ($wrapper) {		
+			return call_user_func_array(array($wrapper, 'call'), func_get_args());		
+ 		} ));		
+		
+		return $twig;		
 	}
 
 	/**

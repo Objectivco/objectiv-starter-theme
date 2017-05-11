@@ -72,12 +72,6 @@ class ObjectivSite extends TimberSite {
 
     function __construct() {
 
-        // Set up the arrays for the page settings
-        $config = new Objectiv\Config( PARENT_THEME_DIR . 'includes/config/settings-page.php' );
-        $settings_page = new Objectiv\Settings( $config );
-
-        // Register Settings
-        add_action( 'init', array( $settings_page, 'register' ) );
         // Add admin body class
         add_filter( 'admin_body_class', array( $this, 'obj_admin_body_class' ) );
         // Enqueue admin assets
