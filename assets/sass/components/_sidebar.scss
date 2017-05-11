@@ -1,6 +1,4 @@
-.sidebar {
-    padding-left: $base-spacing;
-
+.Sidebar {
     ul,
     ol {
         @include list-reset;

@@ -1,0 +1,11 @@
+<article id="post-{{post.id}}" class="post-{{post.id}} {{post.post_type}} entry" itemscope itemtype="https://schema.org/BlogPosting">
+    <header class="entry-header">
+        <h2 class="entry-title" itemprop="name headline"><a href="{{post.link}}" rel="bookmark">{{post.title}}</a></h2>
+        <p class="entry-meta">
+            <time class="entry-time" itemprop="datePublished">{{post.date}}</time> by <span class="entry-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><a href="{{post.author.link}}" class="entry-author-link" itemprop="url" rel="author"><span class="entry-author-name" itemprop="name">{{post.author}}</span></a></span>
+        </p>
+    </header>
+    <div class="entry-content" itemprop="articleBody">
+        {{post.get_preview(80)}}
+    </div>
+</article>

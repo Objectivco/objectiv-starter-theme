@@ -1,6 +1,6 @@
 <?php
 /**
- * Home Template File
+ * Blog home Template File
  *
  * This is the logic for the blog page.
  *
@@ -13,6 +13,7 @@
 $context = Timber::get_context();
 $context['posts'] = new Timber\PostQuery();
 $context['primary_sidebar'] = Timber::get_widgets('primary-sidebar');
+$context['archive_title'] = get_the_archive_title();
 $templates = array( 'home.twig' );
 
 Timber::render( $templates, $context );

@@ -1,16 +1,31 @@
 {% extends "base.twig" %}
 
+{% block banner %}
+	{% embed '/components/banner.twig' %}
+		{% block content %}
+			<h1 class="BannerTitle">{{archive_title}}</h1>
+		{% endblock %}
+	{% endembed %}
+{% endblock %}
+
 {% block content %}
 	{{function('tha_content_before')}}
 	<div class="content-sidebar-wrap">
 		{{function('tha_content_top')}}
-		<main class="content" itemscope itemtype="http://schema.org/Blog">
-			{% for post in posts %}
-				{% include "components/post.twig" %}
-			{% endfor %}
-			{% include "components/pagination.twig" %}
-		</main>
-		{% include "components/sidebar.twig" %}
+		{% block layout %}
+			{% embed 'layouts/sidebar-right.twig' %}
+				{% block content %}
+					{% for post in posts %}
+                        {% include 'components/tease.twig' %}
+                    {% endfor %}
+				{% endblock %}
+				{% block sidebar %}
+					<ul>
+						{{primary_sidebar}}
+					</ul>
+				{% endblock %}
+			{% endembed %}
+		{% endblock %}
 		{{function('tha_content_bottom')}}
 	</div>
 	{{function('tha_content_after')}}
