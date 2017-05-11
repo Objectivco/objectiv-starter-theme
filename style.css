@@ -750,7 +750,14 @@ body.is-open {
 .Nav ul {
   margin: 0;
   padding: 0;
+  list-style: none;
   list-style-type: none;
+}
+
+.Nav ul::after {
+  clear: both;
+  content: "";
+  display: table;
 }
 
 .Nav ul > li {
@@ -977,13 +984,14 @@ body.is-open {
 .sidebar ol {
   margin: 0;
   padding: 0;
-  list-style-type: none;
+  list-style: none;
 }
 
-.sidebar ul > li,
-.sidebar ol > li {
-  display: inline-block;
-  list-style-type: none;
+.sidebar ul::after,
+.sidebar ol::after {
+  clear: both;
+  content: "";
+  display: table;
 }
 
 .sidebar ul li,
@@ -1072,16 +1080,21 @@ body.is-open {
 .pagination ul.pages {
   margin: 0;
   padding: 0;
-  list-style-type: none;
+  list-style: none;
   margin: 0;
   padding: 0;
   text-align: center;
   width: 80%;
 }
 
-.pagination ul.pages > li {
+.pagination ul.pages::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.pagination ul.pages li {
   display: inline-block;
-  list-style-type: none;
 }
 
 .products {

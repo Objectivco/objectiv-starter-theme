@@ -13,10 +13,14 @@
     }
 
     ul.pages {
-        @include inline-li;
+        @include list-reset;
         margin: 0;
         padding: 0;
         text-align: center;
         width: 80%;
+
+        li {
+            display: inline-block;
+        }
     }
 }

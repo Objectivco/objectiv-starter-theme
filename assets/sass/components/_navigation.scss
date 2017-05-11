@@ -4,7 +4,13 @@
     width: 100%;
 
     ul {
-        @include inline-li;
+        @include list-reset;
+        list-style-type: none;
+
+        > li {
+            display: inline-block;
+            list-style-type: none;
+        }
     }
 
     .menu-item {

@@ -3,7 +3,7 @@
 
     ul,
     ol {
-        @include inline-li;
+        @include list-reset;
 
         li {
             display: block;

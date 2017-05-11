@@ -12,8 +12,8 @@ $output-bourbon-deprecation-warnings: false;
 @import "neat";
 @import "assets/components/normalize-css/normalize.css";
 
-@import "mixins";
-@import "utilities";
+@import "mixins/mixins";
+@import "utilities/utilities";
 @import "defaults";
 @import "scaffold";
 
