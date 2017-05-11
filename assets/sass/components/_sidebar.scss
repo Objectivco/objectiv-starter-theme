@@ -11,8 +11,8 @@
     }
 
     li > a {
-        @include transition(color $base-duration $base-timing);
         color: $dark-gray;
+        transition: color $base-duration $base-timing;
 
         &:hover {
             color: $action-color;
@@ -25,9 +25,9 @@
 }
 
 .widgettitle {
-    font-size: em(22);
+    font-size: 22px;
 
-    @include media($large-screen-up) {
-        font-size: em(28);
+    @include grid-media($desktop) {
+        font-size: 28px;
     }
 }

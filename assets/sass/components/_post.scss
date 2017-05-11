@@ -6,8 +6,8 @@
     margin-bottom: $small-spacing;
 
     > a {
-        @include transition(color $base-duration $base-timing);
         color: $base-font-color;
+        transition: color $base-duration $base-timing;
 
         &:hover {
             color: $action-color;
@@ -20,8 +20,8 @@
     margin-bottom: 20px;
 
     a {
-        @include transition(color $base-duration $base-timing);
         color: darken($medium-gray, 10);
+        transition: color $base-duration $base-timing;
 
         &:hover {
             color: $action-color;

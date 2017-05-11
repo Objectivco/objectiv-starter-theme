@@ -3,13 +3,13 @@
     margin-top: $small-spacing;
     padding: $small-spacing 0;
 
-    @include media($medium-screen-up) {
+    @include grid-media($tablet-landscape) {
         margin-top: $base-spacing;
         padding: $base-spacing 0;
     }
 
     .wrap {
-        @include align-items(center);
-        @include display(flex);
+        align-items: center;
+        display: flex;
     }
 }

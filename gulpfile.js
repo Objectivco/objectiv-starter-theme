@@ -4,6 +4,10 @@ var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var bourbon = require( 'bourbon' ).includePaths;
+var neat = require( 'bourbon-neat' ).includePaths;
 
 /**
  * Task to compile Sass styles
@@ -12,9 +16,10 @@ gulp.task('sass', function() {
     gulp.src('assets/sass/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
-            outputStyle: 'nested',
-            includePaths: require('node-neat').includePaths
+            outputStyle: 'expanded',
+            includePaths: [bourbon, neat]
         }).on('error', sass.logError))
+        .pipe(postcss([ autoprefixer() ]))
         .pipe(sourcemaps.write('./assets/maps'))
         .pipe(gulp.dest('./'));
 });

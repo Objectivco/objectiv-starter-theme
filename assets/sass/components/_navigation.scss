@@ -18,18 +18,17 @@
         > a {
             color: $base-font-color;
             display: block;
-            padding: em(25) em(15);
-
-            @include transition(all $base-duration $base-timing);
+            padding: 25px 15px;
+            transition: all $base-duration $base-timing;
 
             &:hover,
             &:focus {
                 color: $action-color;
             }
 
-            @include media($large-screen-up) {
-                padding-left: em(20);
-                padding-right: em(20);
+            @include grid-media($desktop) {
+                padding-left: $small-spacing*2;
+                padding-right: $small-spacing*2;
             }
         }
     }
@@ -81,21 +80,19 @@
 }
 
 .Nav-toggle {
-    @include transform(rotate(0deg));
-    @include transition(all 0.5s ease-in-out);
     width: 20px;
     height: 12px;
     margin-left: auto;
     position: relative;
     cursor: pointer;
+    transform: rotate(0deg);
+    transition: all 0.25s ease-in-out;
 
-    @include media($large-screen-up) {
+    @include grid-media($desktop) {
         display: none;
     }
 
     span {
-        @include transform(rotate(0deg));
-        @include transition(all 0.25s ease-in-out);
         display: block;
         position: absolute;
         height: 2px;
@@ -104,6 +101,8 @@
         border-radius: 0;
         opacity: 1;
         left: 0;
+        transform: rotate(0deg);
+        transition: all 0.25s ease-in-out;
 
         &:nth-child(1) {
             top: 0px;
@@ -124,11 +123,11 @@
     }
 
     &.is-open span:nth-child(2) {
-        @include transform(rotate(45deg));
+        transform: rotate(45deg);
     }
 
     &.is-open span:nth-child(3) {
-        @include transform(rotate(-45deg));
+        transform: rotate(-45deg);
     }
 
     &.is-open span:nth-child(4) {
@@ -139,18 +138,18 @@
 }
 
 .Nav--primary {
-    @include transition(right 0.5s $base-timing);
     background: $dark-gray;
     overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
     bottom: 0;
     top: 0;
+    transition: right 0.5s $base-timing;
     right: -260px;
     width: 260px;
     z-index: 1000;
 
-    @include media($large-screen-up) {
+    @include grid-media($desktop) {
         background: none;
         margin-left: auto;
         position: static;
@@ -164,17 +163,17 @@
     .menu-item {
         display: block;
 
-        @include media($large-screen-up) {
+        @include grid-media($desktop) {
             display: inline-block;
         }
 
         > a {
             color: #eee;
-            padding: em(15);
+            padding: $small-spacing;
 
-            @include media($large-screen-up) {
+            @include grid-media($desktop) {
                 color: $dark-gray;
-                padding: em(25) em(15);
+                padding: $small-spacing*2 $small-spacing;
             }
         }
     }

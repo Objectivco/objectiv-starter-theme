@@ -1,0 +1,33 @@
+$neat-grid: (
+	columns: 12,
+	gutter: 12px,
+);
+
+$mqs-phone-portrait: (
+	columns: 2,
+	media: 359px, // $phone-portrait - 1px
+);
+$mqs-phone-landscape: (
+	columns: 4,
+	media: $phone-landscape,
+);
+$mqs-tablet-portrait: (
+	columns: 4,
+	media: $tablet-portrait,
+);
+$mqs-tablet-landscape: (
+	columns: 8,
+	media: $tablet-landscape,
+);
+$mqs-desktop: (
+	columns: 12,
+	media: $desktop,
+);
+$mqs-large-desktop: (
+	columns: 12,
+	media: $large-desktop,
+);
+$mqs-xl-desktop: (
+	columns: 12,
+	media: $large-desktop,
+);

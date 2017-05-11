@@ -3,7 +3,7 @@
     padding: $small-spacing 0;
     position: relative;
 
-    @include media($medium-screen-up) {
+    @include grid-media($tablet-landscape) {
         padding: $base-spacing 0;
     }
 }
@@ -12,8 +12,8 @@
     margin-bottom: 0;
 
     > a {
-        @include transition(color $base-duration $base-timing);
         color: $base-font-color;
+        transition: color $base-duration $base-timing;
 
         &:hover {
             color: $action-color;
