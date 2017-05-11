@@ -1,5 +1,18 @@
 <div class="PostMeta">
-    <p>
-        <span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
+    <p><strong>Author</strong>:
+        <span itemprop="author">{{post.author.name}}</span>
+    </p>
+    <p><strong>Publish Date</strong>:
+        <time datetime="{{post.date("Y-m-d")}}">{{post.date}}</time>
     </p>
 </div>
+
+<!-- Publisher is required, but doesn't output anything -->
+<div itemprop="publisher" itemscope="itemscope" itemtype="https://schema.org/Organization">
+    <div itemprop="logo" itemscope="itemscope" itemtype="https://schema.org/ImageObject">
+        <meta itemprop="url" content="https://placekitten.com/g/100/100" />
+        <meta itemprop="width" content="100" />
+        <meta itemprop="height" content="100" />
+    </div>
+    <meta itemprop="name" content="{{site.title}}" />
+</div><!--/.itemprop=publisher-->

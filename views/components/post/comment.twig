@@ -1,0 +1,9 @@
+<li itemscope itemtype="http://schema.org/Comment">
+    <span itemprop="creator">{{comment.author}}</span>
+    <span itemprop="datePublished">
+        <time datetime="{{comment.date('Y-m-d')}}">{{comment.date}}</time>
+    </span>
+    <div itemprop="about">
+        {{comment.content}}
+    </div>
+</li>

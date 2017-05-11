@@ -1,10 +1,9 @@
-<article class="Post post-type-{{post.post_type}}" id="post-{{post.ID}}">
-    <section class="PostContent">
-        <h1 class="PostTitle">{{post.title}}</h1>
-        {% include 'components/post/meta.twig' %}
-        <div class="PostBody">
+<article class="Post post-type-{{post.post_type}}" id="post-{{post.ID}}" itemscope itemtype="https://schema.org/BlogPosting">
+    <section class="PostContent" itemprop="mainEntityOfPage">
+        {% include 'components/post/header.twig' %}
+        <div class="PostBody" itemprop="articleBody">
             {{post.content}}
         </div>
-    </section>
-    {% include 'components/post/comments.twig' %}
-</article>
+        {% include 'components/post/footer.twig' %}
+    </section><!--/itemprop=mainEntityOfPage-->
+</article><!--/itemtype=BlogPosting-->

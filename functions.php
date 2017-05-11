@@ -78,11 +78,10 @@ class ObjectivSite extends TimberSite {
         add_action( 'admin_enqueue_scripts', array( $this, 'obj_admin_assets' ) );
         // Remove admin pages for non admin users
         add_action( 'admin_init', array( $this, 'obj_remove_admin_menus' ) );
-
         // Add theme support for menus
         add_theme_support( 'menus' );
         // Add theme support for post_thumbnails
-        add_theme_support( 'post_thumbnails' );
+        add_theme_support( 'post-thumbnails' );
         // Enqueue front-end scripts
         add_action( 'wp_enqueue_scripts', array( $this, 'obj_enqueue_scripts' ) );
         // Add WooCommerce support

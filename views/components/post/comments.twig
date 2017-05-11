@@ -5,9 +5,11 @@
             {{ fn('comment_form') }}
         </div>
         <div class="PostResponses">
-            {% for cmt in post.get_comments() %}
-                {% include "components/post/comment.twig" with {comment:cmt} %}
-            {% endfor %}
+            <ol>
+                {% for cmt in post.get_comments() %}
+                    {% include "components/post/comment.twig" with {comment:cmt} %}
+                {% endfor %}
+            </ol>
         </div>
     </section>
 {% endif %}

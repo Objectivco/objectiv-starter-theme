@@ -15,9 +15,11 @@
 		{% block layout %}
 			{% embed 'layouts/sidebar-right.twig' %}
 				{% block content %}
-					{% for post in posts %}
-                        {% include 'components/tease.twig' %}
-                    {% endfor %}
+					<div itemscope itemtype="https://schema.org/Blog">
+						{% for post in posts %}
+							{% include 'components/tease.twig' %}
+						{% endfor %}
+					</div>
 					{% include 'components/pagination.twig' %}
 				{% endblock %}
 				{% block sidebar %}
