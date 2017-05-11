@@ -1,0 +1,3 @@
+{% for section in sections %}
+    {% include 'components/sections/' ~ section.acf_fc_layout ~ '.twig'  with {section: section} %}
+{% endfor %}
