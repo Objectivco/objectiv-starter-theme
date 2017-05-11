@@ -15,8 +15,8 @@ $heading-line-height: 1.2;
 
 // Other Sizes
 $base-border-radius: 3px;
-$base-spacing: em(40);
-$small-spacing: em(10);
+$base-spacing: 40px;
+$small-spacing: 10px;
 $base-z-index: 0;
 
 // Colors
@@ -48,6 +48,6 @@ $base-timing: ease;
 // Navigation
 $subnav-bg-color: #fff;
 $subnav-link-color: $base-font-color;
-$subnav-font-size: em(14);
+$subnav-font-size: 14px;
 $subnav-bg-color-hover: $light-gray;
 $subnav-link-color-hover: $action-color;

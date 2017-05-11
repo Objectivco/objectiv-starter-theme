@@ -1,5 +1,5 @@
 /*
- * Theme Name: Objectiv
+ * Theme Name: PTPI
  * Description: Objective starter theme built on top of the Timber framework.
  * Author: Objectiv (https://objectiv.co)
  *
@@ -19,7 +19,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   -webkit-font-smoothing: antialiased;
   font-weight: 600;
   line-height: 1;
-  padding: 0.625em 2.5em;
+  padding: 10px 40px;
   text-align: center;
   text-decoration: none;
   transition: background-color 150ms ease;
@@ -43,13 +43,13 @@ fieldset {
 
 legend {
   font-weight: 600;
-  margin-bottom: 0.3125em;
+  margin-bottom: 5px;
   padding: 0; }
 
 label {
   display: block;
   font-weight: 600;
-  margin-bottom: 0.3125em; }
+  margin-bottom: 5px; }
 
 input,
 select,
@@ -65,7 +65,7 @@ input[type="color"], input[type="date"], input[type="datetime"], input[type="dat
   border-radius: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
   box-sizing: border-box;
-  margin-bottom: 0.625em;
+  margin-bottom: 10px;
   padding: 0.625em;
   transition: border-color 150ms ease;
   width: 100%; }
@@ -89,14 +89,14 @@ textarea {
 [type="checkbox"],
 [type="radio"] {
   display: inline;
-  margin-right: 0.3125em; }
+  margin-right: 5px; }
 
 [type="file"] {
-  margin-bottom: 0.625em;
+  margin-bottom: 10px;
   width: 100%; }
 
 select {
-  margin-bottom: 0.625em;
+  margin-bottom: 10px;
   width: 100%; }
 
 html {
@@ -113,12 +113,12 @@ body {
 
 ol,
 ul {
-  margin-bottom: 2.5em;
-  margin-left: 0.3125em; }
+  margin-bottom: 40px;
+  margin-left: 5px; }
   @media only screen and (min-width: 900px) {
     ol,
     ul {
-      margin-left: 0.625em; } }
+      margin-left: 10px; } }
 
 li {
   margin-bottom: 1%; }
@@ -135,7 +135,7 @@ li ul {
   margin-bottom: 1%; }
 
 dl {
-  margin-bottom: 2.5em; }
+  margin-bottom: 40px; }
 
 dt {
   font-weight: bold;
@@ -143,7 +143,7 @@ dt {
 
 dd {
   margin: 0;
-  margin-bottom: 1.25em; }
+  margin-bottom: 20px; }
 
 embed,
 iframe,
@@ -169,7 +169,7 @@ table {
   border-color: #e6e6e8;
   border-collapse: collapse;
   border-radius: 3px;
-  margin: 2.5em 0;
+  margin: 40px 0;
   table-layout: fixed;
   width: 100%; }
 
@@ -178,12 +178,12 @@ th {
   border-bottom: 1px solid #f3f3f4;
   border-color: #e6e6e8;
   font-weight: bold;
-  padding: 0.625em;
+  padding: 10px;
   text-align: left; }
 
 td {
   border-bottom: 1px solid #f3f3f4;
-  padding: 0.625em; }
+  padding: 10px; }
 
 tr,
 td,
@@ -205,7 +205,7 @@ h6 {
   font-family: "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
   font-size: 1em;
   line-height: 1.2;
-  margin: 0 0 0.625em; }
+  margin: 0 0 10px; }
 
 h1,
 .h1 {
@@ -244,7 +244,7 @@ h6,
   font-size: 1em; }
 
 p {
-  margin: 0 0 2.5em; }
+  margin: 0 0 40px; }
   @media only screen and (min-width: 900px) {
     p {
       font-size: 1em; } }
@@ -261,14 +261,14 @@ hr {
   border-left: 0;
   border-right: 0;
   border-top: 0;
-  margin: 2.5em 0; }
+  margin: 40px 0; }
 
 pre {
   background: #f3f3f4;
   color: #333;
   font-family: "Bitstream Vera Sans Mono", "Consolas", "Courier", monospace;
   font-size: 1em;
-  margin-bottom: 2.5em;
+  margin-bottom: 40px;
   max-width: 100%;
   overflow: auto;
   padding: 3% 10% 3% 5%;
@@ -289,7 +289,7 @@ var {
 
 address {
   font-style: italic;
-  margin: 0 0 2.5em; }
+  margin: 0 0 40px; }
 
 abbr,
 acronym {
@@ -451,6 +451,30 @@ html {
   display: block;
   text-decoration: none; }
 
+/**
+ * Text Truncate
+ *
+ * Truncate text with an ellipis
+ */
+.u-textTruncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal; }
+
+/**
+ * Horizontal text alignment
+ */
+.u-textCenter {
+  text-align: center; }
+
+.u-textLeft {
+  text-align: left; }
+
+.u-textRight {
+  text-align: right; }
+
 html,
 body {
   overflow-x: hidden; }
@@ -531,11 +555,11 @@ body {
 
 .SiteHeader {
   color: #333;
-  padding: 0.625em 0;
+  padding: 10px 0;
   position: relative; }
   @media screen and (min-width: 900px) {
     .SiteHeader {
-      padding: 2.5em 0; } }
+      padding: 40px 0; } }
 
 .Logo {
   margin-bottom: 0; }
@@ -585,7 +609,7 @@ body {
     .Nav ul ul a {
       background-color: #fff;
       color: #333;
-      font-size: 0.875em;
+      font-size: 14px;
       padding: 20px;
       position: relative;
       width: 200px; }
@@ -705,12 +729,12 @@ body {
 
 .site-footer {
   border-top: 1px solid #f3f3f4;
-  margin-top: 0.625em;
-  padding: 0.625em 0; }
+  margin-top: 10px;
+  padding: 10px 0; }
   @media screen and (min-width: 900px) {
     .site-footer {
-      margin-top: 2.5em;
-      padding: 2.5em 0; } }
+      margin-top: 40px;
+      padding: 40px 0; } }
   .site-footer .wrap {
     -webkit-box-align: center;
     -moz-box-align: center;
@@ -730,7 +754,7 @@ body {
     display: flex; }
 
 .sidebar {
-  padding-left: 2.5em; }
+  padding-left: 40px; }
   .sidebar ul,
   .sidebar ol {
     margin: 0;
@@ -752,7 +776,7 @@ body {
       color: #1565c0; }
 
 .widget {
-  margin-bottom: 2.5em; }
+  margin-bottom: 40px; }
 
 .widgettitle {
   font-size: 1.375em; }
@@ -761,10 +785,10 @@ body {
       font-size: 1.75em; } }
 
 .post {
-  margin-bottom: 5em; }
+  margin-bottom: 80px; }
 
 .entry-title {
-  margin-bottom: 0.625em; }
+  margin-bottom: 10px; }
   .entry-title > a {
     -webkit-transition: color 150ms ease;
     -moz-transition: color 150ms ease;
