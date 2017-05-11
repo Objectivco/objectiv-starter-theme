@@ -1,16 +1,20 @@
 {% extends "base.twig" %}
 
-{% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
-			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
-		</article>
-	</div><!-- /content-wrapper -->
-	{{sections}}
+{% block banner %}
+{% endblock %}
+
+{% block layout %}
+	{{function('tha_content_before')}}
+	<div class="wrap">
+		{{function('tha_content_top')}}
+		{% embed '/layouts/full-width.twig' %}
+			{% block content %}
+				<h1>{{page.title}}</h1>
+				{{page.content}}
+			{% endblock %}
+		{% endembed %}
+		{{function('tha_content_bottom')}}
+	</div>
+	{{function('tha_content_after')}}
 {% endblock %}
 
