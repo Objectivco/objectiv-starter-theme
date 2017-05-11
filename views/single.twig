@@ -1,21 +1,19 @@
 {% extends "base.twig" %}
 
-{% block content %}
+{% block layout %}
 	{{function('tha_content_before')}}
 	<div class="content-sidebar-wrap">
 		{{function('tha_content_top')}}
-		{% block layout %}
-			{% embed 'layouts/sidebar-right.twig' %}
-				{% block content %}
-					{% include 'components/post.twig' %}
-				{% endblock %}
-				{% block sidebar %}
-					<ul>
-						{{primary_sidebar}}
-					</ul>
-				{% endblock %}
-			{% endembed %}
-		{% endblock %}
+		{% embed 'layouts/sidebar-right.twig' %}
+			{% block content %}
+				{% include 'components/post.twig' %}
+			{% endblock %}
+			{% block sidebar %}
+				<ul>
+					{{primary_sidebar}}
+				</ul>
+			{% endblock %}
+		{% endembed %}
 		{{function('tha_content_bottom')}}
 	</div>
 	{{function('tha_content_after')}}

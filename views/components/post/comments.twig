@@ -1,0 +1,13 @@
+{% if post.comment_status != 'closed' %}
+    <section class="PostComments">
+        <div class="PostRespond">
+            <h3 class="h2">Comments</h3>
+            {{ fn('comment_form') }}
+        </div>
+        <div class="PostResponses">
+            {% for cmt in post.get_comments() %}
+                {% include "components/post/comment.twig" with {comment:cmt} %}
+            {% endfor %}
+        </div>
+    </section>
+{% endif %}
