@@ -1,0 +1,19 @@
+{% macro svg(options={}) %}
+    {# merge the options with passed in options #}
+    {% set options = {
+        icon: 'facebook-square',
+        title: 'Facebook',
+        desc: ''
+    } | merge(options) %}
+
+    {% set title = options.title ? options.title : options.icon %}
+    {% set ariaHidden = ' aria-hidden="true"' %}
+
+    <svg class="icon icon-{{options.icon}}" {{ariaHidden}} role="img">
+        <title>{{options.title}}</title>
+        {% if options.desc %}
+            <desc>{{options.desc}}</desc>
+        {% endif %}
+        <use xlink:href="#icon-{{options.icon}}"></use>
+    </svg>
+{% endmacro %}

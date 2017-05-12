@@ -625,16 +625,6 @@ body {
   overflow-x: hidden;
 }
 
-html {
-  margin-top: 0;
-}
-
-@media only screen and (min-width: 1366px) {
-  html {
-    margin-top: 32px;
-  }
-}
-
 #wpadminbar {
   display: none;
 }
@@ -645,10 +635,10 @@ html {
   }
 }
 
-.site-header::after,
-.site-container::after,
-.site-inner::after,
-.site-footer::after {
+.SiteHeader::after,
+.SiteContainer::after,
+.SiteInner::after,
+.SiteFooter::after {
   clear: both;
   content: "";
   display: table;

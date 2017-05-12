@@ -8,6 +8,10 @@ var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var bourbon = require( 'bourbon' ).includePaths;
 var neat = require( 'bourbon-neat' ).includePaths;
+var svgmin = require( 'gulp-svgmin' );
+var svgstore = require( 'gulp-svgstore' );
+var del = require( 'del' );
+var cheerio = require( 'gulp-cheerio' );
 
 /**
  * Task to compile Sass styles
@@ -36,6 +40,25 @@ gulp.task('js', function() {
 });
 
 /**
+ * Task to concat and compile svg into a single file
+ */
+gulp.task('svg', function() {
+    gulp.src('assets/icons/svg-icons/*.svg')
+        .pipe(svgmin())
+        .pipe(rename({prefix: 'icon-'}))
+        .pipe(svgstore({inlineSvg: true}))
+        .pipe(cheerio({
+            run: function($, file) {
+                $('svg').attr('style', 'display: none');
+                $('[fill]').removeAttr('fill');
+                $('path').removeAttr('class');
+            },
+            parserOptions: {xmlMode: true}
+        }))
+        .pipe(gulp.dest('assets/icons'))
+})
+
+/**
  * Watch tasks
  */
 gulp.task('sass:watch', function() {
@@ -46,4 +69,5 @@ gulp.task('js:watch', function() {
     gulp.watch('./assets/js/**/*.js', ['js']);
 });
 
+gulp.task( 'icons', [ 'svg' ] );
 gulp.task('default', ['sass', 'sass:watch', 'js', 'js:watch']);

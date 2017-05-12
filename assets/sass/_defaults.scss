@@ -3,14 +3,6 @@ body {
     overflow-x: hidden;
 }
 
-html {
-    margin-top: 0;
-    
-    @include grid-media($desktop) {
-        margin-top: 32px;
-    }
-}
-
 #wpadminbar {
     display: none;
 
@@ -19,10 +11,10 @@ html {
     }
 }
 
-.site-header,
-.site-container,
-.site-inner,
-.site-footer {
+.SiteHeader,
+.SiteContainer,
+.SiteInner,
+.SiteFooter {
     @include clearfix;
 }
 

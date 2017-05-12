@@ -92,6 +92,8 @@ class ObjectivSite extends TimberSite {
         add_filter( 'timber_context', array( $this, 'obj_add_to_context' ) );
         // Functions to add to Twig
         add_filter( 'get_twig', array( $this, 'obj_add_to_twig' ) );
+        // Add SVG Sprite to footer
+        add_action( 'wp_footer', array( $this, 'obj_add_svg_sprite' ), 9999 );
         
         parent::__construct();
     }
@@ -189,6 +191,20 @@ class ObjectivSite extends TimberSite {
     function obj_woocommerce_support() {
         add_theme_support( 'woocommerce' );
     }
+
+    /**
+     * Adding SVG sprite to the footer
+     * 
+     * @since 1.0
+     */
+    function obj_add_svg_sprite() {
+        $svg_icons = PARENT_THEME_DIR . 'assets/icons/svg-icons.svg';
+
+        if ( file_exists( $svg_icons ) ) {
+            require_once( $svg_icons );
+        }
+    }
+
 }
 
 new ObjectivSite();

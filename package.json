@@ -9,12 +9,16 @@
     "autoprefixer": "^7.0.1",
     "bourbon": "^4.3.4",
     "bourbon-neat": "^2.0.0",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-cheerio": "^0.6.2",
     "gulp-concat": "^2.6.1",
     "gulp-postcss": "^7.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.9.1",
+    "gulp-svgmin": "^1.2.3",
+    "gulp-svgstore": "^6.1.0",
     "gulp-uglify": "^2.0.0"
   },
   "devDependencies": {}
