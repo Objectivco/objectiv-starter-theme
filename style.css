@@ -1115,4 +1115,9 @@ body.is-open {
   top: 0;
 }
 
+.icon {
+  height: 25px;
+  width: 25px;
+}
+
 /*# sourceMappingURL=assets/maps/style.css.map */
