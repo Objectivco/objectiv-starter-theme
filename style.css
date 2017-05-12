@@ -909,7 +909,7 @@ body.is-open {
   left: 50%;
 }
 
-.Nav--primary {
+.Nav-primary {
   background: #333;
   overflow-x: hidden;
   overflow-y: auto;
@@ -924,7 +924,7 @@ body.is-open {
 }
 
 @media only screen and (min-width: 1366px) {
-  .Nav--primary {
+  .Nav-primary {
     background: none;
     margin-left: auto;
     position: static;
@@ -932,27 +932,27 @@ body.is-open {
   }
 }
 
-.Nav--primary.is-open {
+.Nav-primary.is-open {
   right: 0;
 }
 
-.Nav--primary .menu-item {
+.Nav-primary .menu-item {
   display: block;
 }
 
 @media only screen and (min-width: 1366px) {
-  .Nav--primary .menu-item {
+  .Nav-primary .menu-item {
     display: inline-block;
   }
 }
 
-.Nav--primary .menu-item > a {
+.Nav-primary .menu-item > a {
   color: #eee;
   padding: 10px;
 }
 
 @media only screen and (min-width: 1366px) {
-  .Nav--primary .menu-item > a {
+  .Nav-primary .menu-item > a {
     color: #333;
     padding: 20px 10px;
   }

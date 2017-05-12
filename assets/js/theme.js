@@ -16,7 +16,7 @@ function ObjectivParentTheme($) {
     this.init = function() {
 
         // Initialize the mobile menu
-        $('.nav-primary').objectivMobileMenu();
+        $('.Nav-primary').objectivMobileMenu();
         
     };
 }
