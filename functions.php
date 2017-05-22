@@ -108,7 +108,7 @@ class ObjectivSite extends TimberSite {
         // Register all js
         wp_enqueue_script(
             'objectiv-theme',
-            PARENT_THEME_URI . "assets/js/min/all.min.js",
+            PARENT_THEME_URI . "dist/bundle.js",
             array( 'jquery' ),
             PARENT_THEME_VERSION,
             true
