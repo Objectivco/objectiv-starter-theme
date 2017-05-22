@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 /**
  * Javascript for Objectiv
  *
@@ -24,6 +26,6 @@ function ObjectivParentTheme($) {
 var ObjectivParentTheme = new ObjectivParentTheme(jQuery);
 ObjectivParentTheme.detectTouch();
 
-jQuery(document).ready(function() {
+$(document).ready(function() {
     ObjectivParentTheme.init();
 });
