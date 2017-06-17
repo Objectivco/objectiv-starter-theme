@@ -10,7 +10,7 @@ $output-bourbon-deprecation-warnings: false;
 @import "bourbon";
 @import "base/base";
 @import "neat";
-@import "normalize";
+@import 'assets/components/normalize-css/normalize.css';
 
 @import "mixins/mixins";
 @import "utilities/utilities";
