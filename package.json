@@ -38,10 +38,5 @@
     "svg-url-loader": "^2.0.2",
     "url-loader": "^0.5.8",
     "webpack": "^2.5.1"
-  },
-  "scripts": {
-    "js": "webpack --watch",
-    "sass": "gulp sass:watch",
-    "icons": "gulp icons"
   }
 }
