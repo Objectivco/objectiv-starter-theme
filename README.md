@@ -6,5 +6,5 @@ The [Theme Hook Alliance](https://github.com/zamoose/themehookalliance) is integ
 
 __Contributors:__ [Wes Cole](https://github.com/wesleycole)  
 __Requires:__ WordPress 4.7  
-__Tested up to:__ WordPress 4.7
+__Tested up to:__ WordPress 4.8 
 __License:__ [GPL-2.0+](http://www.gnu.org/licenses/gpl-2.0.html)
