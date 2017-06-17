@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize the mobile menu
     Objectiv.mobileMenu({
         container: '.SiteContainer',
-        menu: '.Nav--mobile',
+        menu: '.Nav--primary',
         toggle: '.NavToggle'
     });
 });

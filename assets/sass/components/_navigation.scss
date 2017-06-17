@@ -85,7 +85,7 @@
 	}
 }
 
-.Nav-toggle {
+.NavToggle {
     width: 20px;
     height: 12px;
     margin-left: auto;
@@ -98,7 +98,7 @@
         display: none;
     }
 
-    span {
+    .NavToggle-icon span {
         display: block;
         position: absolute;
         height: 2px;
@@ -124,45 +124,46 @@
         }
     }
 
-    &.is-open span:nth-child(1) {
+    &.Nav--is-visible .NavToggle-icon span:nth-child(1) {
         opacity: 0;
     }
 
-    &.is-open span:nth-child(2) {
+    &.Nav--is-visible .NavToggle-icon span:nth-child(2) {
         transform: rotate(45deg);
     }
 
-    &.is-open span:nth-child(3) {
+    &.Nav--is-visible .NavToggle-icon span:nth-child(3) {
         transform: rotate(-45deg);
     }
 
-    &.is-open span:nth-child(4) {
+    &.Nav--is-visible .NavToggle-icon span:nth-child(4) {
         top: 18px;
         width: 0%;
         left: 50%;
     }
 }
 
-.Nav-primary {
+.Nav--primary {
     background: $dark-gray;
     overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
     bottom: 0;
     top: 0;
-    transition: right 0.5s $base-timing;
+    transition: right 0.5s ease-in-out;
     right: -260px;
     width: 260px;
     z-index: 1000;
 
     @include grid-media($desktop) {
         background: none;
+        display: block;
         margin-left: auto;
         position: static;
         width: auto;
     }
 
-    &.is-open {
+    &.Nav--is-visible {
         right: 0;
     }
 
