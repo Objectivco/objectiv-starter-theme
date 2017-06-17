@@ -12,11 +12,11 @@
 
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
-$templates = array( 'index.twig' );
+$templates = array( 'index.twig', 'home.twig', 'front-page.twig' );
 
-if ( is_home() ) {
+if (is_home()) {
     array_unshift( $templates, 'home.twig' );
-} elseif ( is_front_page() ) {
+} elseif (is_front_page()) {
     $context['post'] = Timber::get_post();
     array_unshift( $templates, 'front-page.twig' );
 }
