@@ -94,7 +94,7 @@
     transform: rotate(0deg);
     transition: all 0.25s ease-in-out;
 
-    @include grid-media($desktop) {
+    @include grid-media($tablet-portrait) {
         display: none;
     }
 
@@ -155,7 +155,7 @@
     width: 260px;
     z-index: 1000;
 
-    @include grid-media($desktop) {
+    @include grid-media($tablet-portrait) {
         background: none;
         display: block;
         margin-left: auto;
@@ -170,7 +170,7 @@
     .menu-item {
         display: block;
 
-        @include grid-media($desktop) {
+        @include grid-media($tablet-portrait) {
             display: inline-block;
         }
 
@@ -178,7 +178,7 @@
             color: #eee;
             padding: $small-spacing;
 
-            @include grid-media($desktop) {
+            @include grid-media($tablet-portrait) {
                 color: $dark-gray;
                 padding: $small-spacing*2 $small-spacing;
             }

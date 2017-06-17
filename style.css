@@ -1293,7 +1293,7 @@ body.is-open {
   transition: all 0.25s ease-in-out;
 }
 
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 768px) {
   .NavToggle {
     display: none;
   }
@@ -1360,7 +1360,7 @@ body.is-open {
   z-index: 1000;
 }
 
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 768px) {
   .Nav--primary {
     background: none;
     display: block;
@@ -1378,7 +1378,7 @@ body.is-open {
   display: block;
 }
 
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 768px) {
   .Nav--primary .menu-item {
     display: inline-block;
   }
@@ -1389,7 +1389,7 @@ body.is-open {
   padding: 10px;
 }
 
-@media only screen and (min-width: 1366px) {
+@media only screen and (min-width: 768px) {
   .Nav--primary .menu-item > a {
     color: #333;
     padding: 20px 10px;
