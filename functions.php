@@ -119,8 +119,7 @@ class ObjectivSite extends TimberSite
     function obj_add_to_context($context)
     {
         $context['site'] = $this;
-        $context['menu'] = new TimberMenu( 'testing-menu' );
-        $context['seo_title'] = get_option( 'seo_title' );
+        $context['menu'] = new TimberMenu();
         return $context;
     }
 
