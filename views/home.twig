@@ -3,7 +3,7 @@
 {% block banner %}
 	{% embed '/components/banner.twig' %}
 		{% block content %}
-			<h1 class="BannerTitle">{{archive_title}}</h1>
+			<h1>Blog</h1>
 		{% endblock %}
 	{% endembed %}
 {% endblock %}
@@ -13,7 +13,7 @@
 	<div class="content-sidebar-wrap">
 		{{function('tha_content_top')}}
 		{% block layout %}
-			{% embed 'layouts/sidebar-right.twig' %}
+			{% embed 'layouts/content-sidebar.twig' %}
 				{% block content %}
 					<div itemscope itemtype="https://schema.org/Blog">
 						{% for post in posts %}
@@ -24,7 +24,7 @@
 				{% endblock %}
 				{% block sidebar %}
 					<ul>
-						{{primary_sidebar}}
+						{{sidebar}}
 					</ul>
 				{% endblock %}
 			{% endembed %}

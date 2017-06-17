@@ -13,7 +13,13 @@
 			{{function('tha_header_after')}}
 
 			<!-- Page Banner -->
-			{% block banner %}{% endblock %}
+			{% block banner %}
+				{% embed '/components/banner.twig' %}
+					{% block content %}
+						<h1>{{post.title}}</h1>
+					{% endblock %}
+				{% endembed %}
+			{% endblock %}
 
 			<!-- Site Inner -->
 			<div class="SiteInner">

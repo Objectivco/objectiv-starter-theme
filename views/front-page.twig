@@ -1,29 +1,13 @@
 {% extends "base.twig" %}
 
-{% block banner %}
-	{% embed '/components/banner.twig' %}
-		{% block content %}
-			<h1>{{page.title}}</h1>
-		{% endblock %}
-	{% endembed %}
-{% endblock %}
-
 {% block layout %}
 	{{function('tha_content_before')}}
 	<div class="wrap">
 		{{function('tha_content_top')}}
 		{% embed '/layouts/full-width.twig' %}
 			{% block content %}
-				<h1>{{page.title}}</h1>
-				{{page.content}}
-				<div class="slider">
-					<div class="slide">
-						Slide 1
-					</div>
-					<div class="slide">
-						Slide 2
-					</div>
-				</div>
+				<h1>{{post.title}}</h1>
+				{{post.content}}
 			{% endblock %}
 		{% endembed %}
 		{{function('tha_content_bottom')}}

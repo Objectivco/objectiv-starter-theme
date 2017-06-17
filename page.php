@@ -11,6 +11,11 @@
 
 $context = Timber::get_context();
 $post = Timber::query_post();
-$context['page'] = $post;
+$context['post'] = $post;
+$templates = array( 'page.twig' );
 
-Timber::render( array( 'page.twig' ), $context );
+if (is_front_page()) {
+    array_unshift( $templates, 'front-page.twig' );
+}
+
+Timber::render( $templates, $context );

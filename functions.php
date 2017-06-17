@@ -51,9 +51,9 @@ define( 'PARENT_THEME_LIB_DIR', trailingslashit( PARENT_THEME_DIR . 'lib' ) );
 require_once( PARENT_THEME_DIR . 'vendor/autoload.php' );
 
 // Front End
-require_once( PARENT_THEME_DIR . 'includes/tha-theme-hooks.php' );
-require_once( PARENT_THEME_DIR . 'includes/attributes.php' );
-require_once( PARENT_THEME_DIR . 'includes/woo/woo-functions.php' );
+require_once( PARENT_THEME_DIR . 'inc/tha-theme-hooks.php' );
+require_once( PARENT_THEME_DIR . 'inc/attributes.php' );
+require_once( PARENT_THEME_DIR . 'inc/woo/woo-functions.php' );
 
 /**
  * Initialize and set up Timber views location

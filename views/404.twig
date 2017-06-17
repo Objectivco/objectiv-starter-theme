@@ -1,5 +1,23 @@
 {% extends "base.twig" %}
 
-{% block content %}
-	Sorry, we couldn't find what you're looking for.
+{% block banner %}
+	{% embed '/components/banner.twig' %}
+		{% block content %}
+			<h1>404 Error</h1>
+		{% endblock %}
+	{% endembed %}
+{% endblock %}
+
+{% block layout %}
+	{{function('tha_content_before')}}
+	{{function('tha_content_top')}}
+		{% embed '/layouts/full-width.twig' %}
+			{% block content %}
+				<div class="wrap">
+					Sorry, but there was not a page found that matches your query.
+				</div>
+			{% endblock %}
+		{% endembed %}
+	{{function('tha_content_bottom')}}
+	{{function('tha_content_after')}}
 {% endblock %}
