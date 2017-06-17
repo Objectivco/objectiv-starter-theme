@@ -5,8 +5,9 @@
 	{{function('tha_content_top')}}
 		{% embed '/layouts/full-width.twig' %}
 			{% block content %}
-				{% set sections = post.get_field('content_section') %}
-				{% include 'components/sections.twig' with {sections:sections} %}
+				<div class="wrap">
+					{{post.content}}
+				</div>
 			{% endblock %}
 		{% endembed %}
 	{{function('tha_content_bottom')}}
