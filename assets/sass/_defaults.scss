@@ -1,6 +1,6 @@
-html,
-body {
-    overflow-x: hidden;
+html .mceContentBody,
+body#tinymce {
+    height: auto !important;
 }
 
 #wpadminbar {

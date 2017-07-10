@@ -1,0 +1,7 @@
+{% macro button(text, link, options={}) %}
+    {% import '_macros/_classAttr.twig' as m_classAttr %}
+    {% set options = {
+        class: []
+    } | merge(options) %}
+    <a href="{{link}}" {{m_classAttr.classAttr(options.class)}}>{{text}}</a>
+{% endmacro %}
