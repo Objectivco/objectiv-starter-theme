@@ -1,6 +1,9 @@
-<div class="Banner u-alignMiddle">
-    <div class="Banner-content">
-        {% block content %}
-        {% endblock %}
+<div class="cover bg-left bg-center-l" style="background-image: url(http://mrmrs.github.io/photos/u/011.jpg)">
+    <div class="bg-black-40 pa4 pa5-m pa6-l">
+        <div class="center mw8 tc">
+            {% block content %}
+                {% include 'components/banner-content.twig' %}
+            {% endblock %}
+        </div>
     </div>
 </div>

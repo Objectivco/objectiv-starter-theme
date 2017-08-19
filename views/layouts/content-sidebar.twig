@@ -1,8 +1,12 @@
-<div class="content-wrap content-sidebar">
-    <main class="Content" itemscope itemtype="http://schema.org/Blog">
-        {% block content %}{% endblock %}
-    </main>
-    <aside class="Sidebar Sidebar-primary" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="http://schema.org/WPSidebar">
-        {% block sidebar %}{% endblock %}
-    </aside>
+<div class="mw8 center mt4">
+    <div class="row">
+        <main class="col-sm-12 col-md-9" itemscope itemtype="http://schema.org/Blog">
+            {% block content %}{% endblock %}
+        </main>
+        <aside class="col-sm-12 col-md-3" role="complementary" aria-label="Primary Sidebar" itemscope itemtype="http://schema.org/WPSidebar">
+            {% block sidebar %}
+                {% include 'components/sidebar.twig' %}
+            {% endblock %}
+        </aside>
+    </div>
 </div>

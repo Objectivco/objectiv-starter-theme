@@ -1,13 +1,5 @@
 {% extends "base.twig" %}
 
-{% block banner %}
-	{% embed '/components/banner.twig' %}
-		{% block content %}
-			<h1>Blog</h1>
-		{% endblock %}
-	{% endembed %}
-{% endblock %}
-
 {% block content %}
 	{{function('tha_content_before')}}
 	<div class="content-sidebar-wrap">
@@ -17,15 +9,10 @@
 				{% block content %}
 					<div itemscope itemtype="https://schema.org/Blog">
 						{% for post in posts %}
-							{% include 'components/tease.twig' %}
+							{% include 'components/post-excerpt.twig' %}
 						{% endfor %}
 					</div>
 					{% include 'components/pagination.twig' %}
-				{% endblock %}
-				{% block sidebar %}
-					<ul>
-						{{sidebar}}
-					</ul>
 				{% endblock %}
 			{% endembed %}
 		{% endblock %}

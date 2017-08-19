@@ -5,7 +5,7 @@
 		{{function('tha_body_top')}}
 
 		<!-- Site Container -->
-		<div class="SiteContainer">
+		<div class="avenir">
 
 			<!-- Site Header -->
 			{{function('tha_header_before')}}
@@ -16,17 +16,15 @@
 			{% block banner %}
 				{% embed '/components/banner.twig' %}
 					{% block content %}
-						<h1>{{post.title}}</h1>
+						<h1 class="f2 f1-l mv0 lh-title">{{post.title}}</h1>
 					{% endblock %}
 				{% endembed %}
 			{% endblock %}
 
 			<!-- Site Inner -->
-			<div class="SiteInner">
-				{% block layout %}
-					Sorry, no content
-				{% endblock %}
-			</div>
+			{% block layout %}
+				Sorry, no content
+			{% endblock %}
 
 			<!-- Site Footer -->
 			{% block footer %}
