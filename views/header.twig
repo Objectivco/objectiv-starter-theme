@@ -1,21 +1,23 @@
 <header class="bb b--light-gray pa2" itemscope itemtype="http://schema.org/WPHeader">
     {{function('tha_header_top')}}
     {% block header %}
-        <div class="row flex items-center center">
-            <h1 class="col-xs" role="banner">
-                <a class="db dark-red link dim" href="{{site.url}}" rel="home">{{site.name}}</a>
-            </h1>
-            <nav class="col-xs tr dn-m" itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement" role="navigation">
-                {% include "menu.twig" with {'menu': menu.get_items} %}
-            </nav><!-- #nav -->
-            <div class="NavToggle-icon dn-ns">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+        <div class="mw8 center">
+            <div class="row flex items-center">
+                <h1 class="col-xs" role="banner">
+                    <a class="db dark-red link dim" href="{{site.url}}" rel="home">{{site.name}}</a>
+                </h1>
+                <nav class="col-xs tr dn-m" itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement" role="navigation">
+                    {% include "menu.twig" with {'menu': menu.get_items} %}
+                </nav><!-- #nav -->
+                <div class="NavToggle-icon dn-ns">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                </div>
+                {# TODO: Update to appropriate screen eader text #}
+                <span class="screen-reader-text dn">Primary Menu</span>
             </div>
-            {# TODO: Update to appropriate screen eader text #}
-            <span class="screen-reader-text dn">Primary Menu</span>
         </div>
     {% endblock %}
     {{function('tha_header_bottom')}}
