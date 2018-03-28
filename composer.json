@@ -6,7 +6,7 @@
         {
             "type":"composer",
             "url":"https://wpackagist.org"
-        },
+        }
     ],
     "require": {
         "timber/timber": "^1.1",
