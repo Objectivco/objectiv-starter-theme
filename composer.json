@@ -1,6 +1,7 @@
 {
     "name": "objectiv/objectiv-starter-theme",
     "description": "A starter theme for Objectiv websites",
+    "type": "wordpress-theme",
     "repositories":[
         {
             "type":"composer",
